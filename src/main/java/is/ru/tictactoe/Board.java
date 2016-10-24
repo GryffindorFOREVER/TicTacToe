@@ -49,7 +49,7 @@ public class Board {
 		 return winner;
 		 
 	 }
-	 private static boolean win(int count){
+	 public static boolean win(int count){
 		 boolean win = false;
 		 if(count == SIZE) {
 			 win = true;

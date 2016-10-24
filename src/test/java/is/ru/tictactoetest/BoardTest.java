@@ -68,13 +68,32 @@ public class BoardTest {
 
 	@Test
 	public void testFull(){
-		//false if board is not full
-	}*/
+		
+		Board b = new Board();
+		
+		/*for(int i = 0; i < 3; i++){
+	 		for(int j = 0; j < 3; j++){
+	 			b[i][j] = ' ';
+	 		}
+	 	}*/
+	 //	assertFalse(b.full());
+	//}
 	
 	@Test
 	public void testSetMove() {
 		Board b = new Board();
     	b.setMove(8, 'O');
 		assertTrue(b.setMoved(8));
+	}
+
+	//}
+	/*@Test 
+	public void testIsWinner(){
+
+	} */
+
+	@Test
+	public void testWin(){
+		assertTrue(Board.win(3));
 	}
 }
