@@ -1,8 +1,8 @@
 package is.ru.tictactoe;
 
 public class Board {
-	 private char[][] board;
-	 private final int SIZE = 3;
+	 private static char[][] board;
+	 private static final int SIZE = 3;
 	 
 	 public Board() {
 		 board = new char[SIZE][SIZE];
@@ -13,7 +13,7 @@ public class Board {
 			 }
 		 }
 	 }
-	 public boolean isWinner(int row, int col){
+	 public static boolean isWinner(int row, int col){
 		 boolean winner = false;
 		 char player = board[row][col];
 		 int count = 0;
@@ -49,7 +49,7 @@ public class Board {
 		 return winner;
 		 
 	 }
-	 private boolean win(int count){
+	 private static boolean win(int count){
 		 boolean win = false;
 		 if(count == SIZE) {
 			 win = true;
@@ -58,7 +58,7 @@ public class Board {
 		 return win;
 	 }
 
-	 public boolean full(){
+	 public static boolean full(){
 	 	for(int i = 0; i < SIZE; i++){
 	 		for(int j = 0; j < SIZE; j++){
 	 			if(board[i][j] == ' '){
@@ -69,7 +69,7 @@ public class Board {
 	 	return true;
 	 }
 
-	 public void displayBoard(){
+	 public static void displayBoard(){
 	 	int k = 0;
 	 	for(int i = 0; i < SIZE; i++){
 	 		for(int j = 0; j < SIZE; j++){
@@ -83,6 +83,21 @@ public class Board {
 	 		}
 	 		System.out.println();
 	 	}
+	 }
+	 
+	 public void setMove(int move, char player){
+		int row = (move - 1) / 3;
+		int column = (move + 2) % 3;
+		this.board[row][column] = player;
+	 }
+	 
+	 public boolean setMoved(int move) {
+		int row = (move - 1) / 3;
+		int column = (move + 2) % 3;
+		if(board[row][column] == ' ') {
+			return false;
+		}
+		return true;
 	 }
 
 }

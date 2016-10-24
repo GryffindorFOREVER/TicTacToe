@@ -1,6 +1,7 @@
 package is.ru.tictactoe;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class BoardTest {
 /*
@@ -69,4 +70,11 @@ public class BoardTest {
 	public void testFull(){
 		//false if board is not full
 	}*/
+	
+	@Test
+	public void testSetMove() {
+		Board b = new Board();
+    	b.setMove(8, 'O');
+		assertTrue(b.setMoved(8));
+	}
 }
