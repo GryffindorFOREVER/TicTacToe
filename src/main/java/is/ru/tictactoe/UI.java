@@ -1,8 +1,8 @@
-package is.ru.display;
+package is.ru.ui;
 
-public class Display {
+public class UI {
 	
-	public Display(){
+	public UI(){
 
 	}
 }
