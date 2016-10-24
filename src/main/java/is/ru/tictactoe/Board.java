@@ -6,7 +6,7 @@ public class Board {
 	 
 	 public Board() {
 		 board = new char[SIZE][SIZE];
-		 int i = 1
+		 int i = 1;
 		 for( int row : SIZE){
 			 for( int col : SIZE){
 				 board[row][col] = i;
@@ -36,7 +36,7 @@ public class Board {
 		 //athugum a ska fra vinstri
 		 for(int i : SIZE){
 			 if(board[i][i] == player)
-				 count++
+				 count++;
 		 }
 		 winner = win(count);
 		 
@@ -59,3 +59,4 @@ public class Board {
 		 return win;
 	 }
 
+}
