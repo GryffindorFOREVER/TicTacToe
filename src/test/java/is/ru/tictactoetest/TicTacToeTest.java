@@ -15,4 +15,8 @@ public class TicTacToeTest {
 	   TicTacToe tic = new TicTacToe();
 	   assertEquals("YOLO", tic.YOLO());	
    }	*/	
+   @Test
+   public void testWhatPlayer(){
+   		assertEquals('O', TicTacToe.changePlayer('X'));
+   }
 }

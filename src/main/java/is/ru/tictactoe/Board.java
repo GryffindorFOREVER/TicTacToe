@@ -58,4 +58,31 @@ public class Board {
 		 return win;
 	 }
 
+	 public boolean full(){
+	 	for(int i = 0; i < SIZE; i++){
+	 		for(int j = 0; j < SIZE; j++){
+	 			if(board[i][j] == ' '){
+	 				return false;
+	 			}
+	 		}
+	 	}
+	 	return true;
+	 }
+
+	 public void displayBoard(){
+	 	int k = 0;
+	 	for(int i = 0; i < SIZE; i++){
+	 		for(int j = 0; j < SIZE; j++){
+	 			if(board[i][j] == ' '){
+	 				System.out.print(k);
+	 			}
+	 			else{
+	 				System.out.print(board[i][j]);
+	 			}
+	 			k++;
+	 		}
+	 		System.out.println();
+	 	}
+	 }
+
 }
