@@ -9,8 +9,7 @@ public class Board {
 		 int i = 1;
 		 for( int row = 0; row < SIZE; row++){
 			 for( int col = 0; col < SIZE; col++){
-				 board[row][col] = i;
-				 i++;
+				 board[row][col] = ' ';
 			 }
 		 }
 	 }
