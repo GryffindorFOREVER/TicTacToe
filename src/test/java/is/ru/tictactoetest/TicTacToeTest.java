@@ -1,7 +1,6 @@
 package is.ru.tictactoe;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TicTacToeTest { 
@@ -75,4 +74,15 @@ public class TicTacToeTest {
 		TicTacToe.Move(board[0][1], board[1][1], board[0][0], board[1][0], board[2][2], board[1][2]);
 	    Assert.Equals(Board.isWinner(1, 2), true);
 	}*/
+
+	@Test
+	public void testFull(){
+		TicTacToe b = new TicTacToe();
+	 	assertFalse(b.full());
+	}
+
+	@Test
+	public void testWin(){
+		assertTrue(TicTacToe.win(3));
+	}
 }
