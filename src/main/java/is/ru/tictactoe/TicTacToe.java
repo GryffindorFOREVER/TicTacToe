@@ -80,6 +80,10 @@ public class TicTacToe {
 		 return winner;
 	 }
 
+	 public static int getSizeOfBoard(){
+	 	return board.getSize();
+	 }
+
  	 public static boolean win(int count){
 	 boolean win = false;
 	 if(count == SIZE) {
