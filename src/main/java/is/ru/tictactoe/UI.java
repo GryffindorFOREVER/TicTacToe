@@ -1,12 +1,17 @@
 package is.ru.tictactoe;
 
+import java.util.Scanner;
+
 public class UI {
 
 	private TicTacToe gamePlay;
+	private Scanner in;
 	
 	public UI(){
 		gamePlay = new TicTacToe();
+		//in = new Scanner(System.in);
 	}
+
 
 	public void displayBoard(){
 		char[][] b = gamePlay.getBoardFromBoardClass(); 
@@ -17,26 +22,18 @@ public class UI {
 				System.out.print("[");
 				System.out.print(b[i][j]);
 				System.out.print("]");
-				/*if(j < sz-1){
-					if(i < sz){
-						System.out.print("_");
-					}
-
-					System.out.print("|");
-					System.out.print("_");
-				}*/
-				/*for(int k = 0; k < sz-1; k++){
-					if(System.out.print("|" + "_");
-				}*/	
 			}
 			System.out.println();
 		}
 	}
 
-	public void play(){
-		displayBoard();
-		System.out.println("Choose a tile from 1 to 9");
-		System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
+	public void letsPlay(){
+		while(!gamePlay.full()){
+			displayBoard();
+			System.out.println("Choose a tile from 1 to 9");
+
+			System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
+		}
 	}
 
 
