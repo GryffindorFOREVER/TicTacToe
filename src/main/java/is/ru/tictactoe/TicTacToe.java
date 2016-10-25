@@ -10,8 +10,8 @@ public class TicTacToe {
 		player = 'X';
 	}
 
-	public void  getBoard(){
-		
+	public char[][] getBoardFromBoardClass(){
+		return board.getBoard();
 	}
 	/*
 	public static void main(String[] args) {

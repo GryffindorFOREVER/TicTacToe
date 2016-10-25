@@ -23,6 +23,6 @@ dependencies {
 
 jar {
      manifest {
-          attributes("Main-Class": "is.ru.tictactoe.TicTacToe")
+          attributes("Main-Class": "is.ru.tictactoe.Main")
 	  }
 }
