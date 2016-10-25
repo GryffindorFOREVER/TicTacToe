@@ -1,0 +1,11 @@
+#!/bin/bash
+
+JAR="tictactoe.jar"
+
+bin/clean
+bin/package
+
+test -f /tmp/${JAR} && rm /tmp/${JAR}
+cp build/libs/${JAR} /tmp
+
+java -jar /tmp/${JAR}
