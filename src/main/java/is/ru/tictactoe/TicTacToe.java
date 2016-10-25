@@ -1,7 +1,18 @@
 package is.ru.tictactoe;
 
 public class TicTacToe {
+	private Board board;
+	private char player;
 
+	public TicTacToe(){
+		board = new Board();
+		player = 'X';
+	}
+
+	public void  getBoard(){
+		
+	}
+	/*
 	public static void main(String[] args) {
 		/*int counter = 0;
 
@@ -20,8 +31,8 @@ public class TicTacToe {
 		}
 		if(!b.isWinner()){
 			System.out.print("Draw!");
-		}*/
-	}
+		}
+	}*/
 
 	public static char changePlayer(char player){
 		if(player == 'X'){

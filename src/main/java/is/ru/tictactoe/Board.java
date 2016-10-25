@@ -69,7 +69,7 @@ public class Board {
 	 	return true;
 	 }
 
-	 public static void displayBoard(){
+	/* public static void displayBoard(){
 	 	int k = 0;
 	 	for(int i = 0; i < SIZE; i++){
 	 		for(int j = 0; j < SIZE; j++){
@@ -83,7 +83,7 @@ public class Board {
 	 		}
 	 		System.out.println();
 	 	}
-	 }
+	 }*/
 	 
 	 public void setMove(int move, char player){
 		int row = (move - 1) / 3;
@@ -98,6 +98,10 @@ public class Board {
 			return false;
 		}
 		return true;
+	 }
+
+	 public char[][] getBoard(){
+	 	return this.board;
 	 }
 
 }
