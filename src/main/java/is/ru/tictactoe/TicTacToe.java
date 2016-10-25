@@ -13,6 +13,10 @@ public class TicTacToe {
 	public char[][] getBoardFromBoardClass(){
 		return board.getBoard();
 	}
+
+	public char getPlayer(){
+		return this.player;
+	}
 	/*
 	public static void main(String[] args) {
 		/*int counter = 0;
@@ -78,6 +82,10 @@ public class TicTacToe {
 		 winner = win(count);
 		 
 		 return winner;
+	 }
+
+	 public static int getSizeOfBoard(){
+	 	return board.getSize();
 	 }
 
  	 public static boolean win(int count){

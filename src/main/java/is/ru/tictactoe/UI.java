@@ -10,14 +10,33 @@ public class UI {
 
 	public void displayBoard(){
 		char[][] b = gamePlay.getBoardFromBoardClass(); 
-		
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++){
+		int sz = gamePlay.getSizeOfBoard();
+
+		for(int i = 0; i < sz; i++){
+			for(int j = 0; j < sz; j++){
+				System.out.print("[");
 				System.out.print(b[i][j]);
-				System.out.print("jojo");
+				System.out.print("]");
+				/*if(j < sz-1){
+					if(i < sz){
+						System.out.print("_");
+					}
+
+					System.out.print("|");
+					System.out.print("_");
+				}*/
+				/*for(int k = 0; k < sz-1; k++){
+					if(System.out.print("|" + "_");
+				}*/	
 			}
 			System.out.println();
 		}
+	}
+
+	public void play(){
+		displayBoard();
+		System.out.println("Choose a tile from 1 to 9");
+		System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
 	}
 
 

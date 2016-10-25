@@ -85,4 +85,15 @@ public class TicTacToeTest {
 	public void testWin(){
 		assertTrue(TicTacToe.win(3));
 	}
+
+  @Test
+  public void testGetSizeOfBoard(){
+    assertEquals(3, TicTacToe.getSizeOfBoard());
+  }
+
+  @Test
+  public void testGetPlayer(){
+    TicTacToe t = new TicTacToe();
+    assertEquals('X', t.getPlayer());
+  }
 }

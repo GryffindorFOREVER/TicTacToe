@@ -35,4 +35,8 @@ public class Board {
 	 public char getBoardValue(int row, int col){
 	 	return board[row][col];
 	 }
+
+	 public static int getSize(){
+	 	return SIZE;
+	 }
 }
