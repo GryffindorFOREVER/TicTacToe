@@ -11,9 +11,23 @@ public class UI {
 	public void displayBoard(){
 		char[][] b = gamePlay.getBoardFromBoardClass(); 
 		int sz = gamePlay.getSizeOfBoard();
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++){
+
+		for(int i = 0; i < sz; i++){
+			for(int j = 0; j < sz; j++){
+				System.out.print("[");
 				System.out.print(b[i][j]);
+				System.out.print("]");
+				/*if(j < sz-1){
+					if(i < sz){
+						System.out.print("_");
+					}
+
+					System.out.print("|");
+					System.out.print("_");
+				}*/
+				/*for(int k = 0; k < sz-1; k++){
+					if(System.out.print("|" + "_");
+				}*/	
 			}
 			System.out.println();
 		}
