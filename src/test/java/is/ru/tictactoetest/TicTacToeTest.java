@@ -83,17 +83,26 @@ public class TicTacToeTest {
 
 	@Test
 	public void testWin(){
-		assertTrue(TicTacToe.win(3));
+		TicTacToe b = new TicTacToe();
+		assertTrue(b.win(3));
 	}
 
-  @Test
-  public void testGetSizeOfBoard(){
-    assertEquals(3, TicTacToe.getSizeOfBoard());
-  }
+	@Test
+	public void testGetSizeOfBoard(){
+		TicTacToe b = new TicTacToe();
+		assertEquals(3, b.getSizeOfBoard());
+	}
 
-  @Test
-  public void testGetPlayer(){
-    TicTacToe t = new TicTacToe();
-    assertEquals('X', t.getPlayer());
-  }
+	@Test
+	public void testGetPlayer(){
+		TicTacToe t = new TicTacToe();
+		assertEquals('X', t.getPlayer());
+	}
+
+	@Test
+	public void testSinglePlay(){
+		TicTacToe b = new TicTacToe();
+		assertTrue(b.singlePlay(3));
+	}
+
 }
