@@ -1,5 +1,7 @@
 package is.ru.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 	private static Board board;
 	private char player;
@@ -17,6 +19,27 @@ public class TicTacToe {
 	public char getPlayer(){
 		return this.player;
 	}
+	
+	public static void singlePlay(char player){
+		boolean valid = false;
+		do 
+		{
+			System.out.println("Player "+ player + " enter your move, 1-9: ");
+			Scanner scanner = new Scanner(System.in);
+			int move = scanner.nextInt();
+			Board b = new Board();
+			
+			if(move > 0 && move <= 9 && !(b.setMoved(move))){
+				b.setMove(move, player);
+				valid = false;
+				changePlayer(player);
+			}
+			else{
+				System.out.println("Move is not valid! Try again!");
+			}
+		} while(!valid);
+	}
+	
 	/*
 	public static void main(String[] args) {
 		/*int counter = 0;
