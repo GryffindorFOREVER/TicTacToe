@@ -100,9 +100,15 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void testSinglePlay(){
+	public void testSinglePlayPass(){
 		TicTacToe b = new TicTacToe();
 		assertTrue(b.singlePlay(3));
+	}
+	
+	@Test
+	public void testSinglePlayFail(){
+		TicTacToe b = new TicTacToe();
+		assertFalse(b.singlePlay(12));
 	}
 
 }
