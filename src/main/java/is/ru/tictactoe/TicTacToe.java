@@ -53,7 +53,6 @@ public class TicTacToe {
 		return board.getBoardValue(row,col);
 	}
 	public boolean isWinner(int row, int col){
-		 boolean winner = false;
 		 char currPlayer = board.getBoardValue(row,col);
 		 int count = 0;
 	
@@ -95,7 +94,7 @@ public class TicTacToe {
 		 	return true;
 		 }
 		
-		 return winner;
+		 return false;
 	 }
 
 	 public int getSizeOfBoard(){
