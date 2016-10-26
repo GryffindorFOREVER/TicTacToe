@@ -31,10 +31,21 @@ public class UI {
 		int move;
 		while(!gamePlay.full()){
 			displayBoard();
-			System.out.println("Choose a tile from 1 to 9");
-			System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
-			//move = scanner.nextInt();
-			//gamePlay.singlePlay(move);
+			System.out.println("Choose an empty tile from 1 to 9");
+			System.out.print("Player " + gamePlay.getPlayer() + ": ");
+			move = in.nextInt();
+			System.out.println();
+			
+			if(!gamePlay.singlePlay(move)){
+				System.out.println();
+				System.out.println("Invalid move! Try again");
+				System.out.println();
+			}
+			else{
+				gamePlay.singlePlay(move);
+			}
+			
+			
 		}
 	}
 
