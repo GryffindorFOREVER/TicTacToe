@@ -19,7 +19,7 @@ public class BoardTest {
 	@Test
 	public void testSetMove() {
 		Board b = new Board();
-    	b.setMove(8, 'O');
+    	b.setBoardMove(2, 1, 'O');
 		assertTrue(b.setMoved(8));
 	}
 

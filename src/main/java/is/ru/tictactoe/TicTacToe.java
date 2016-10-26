@@ -15,6 +15,10 @@ public class TicTacToe {
 	public char[][] getBoardFromBoardClass(){
 		return board.getBoard();
 	}
+	
+	public Board getBoard(){
+		return this.board;
+	}
 
 	public char getPlayer(){
 		return this.player;
@@ -23,7 +27,7 @@ public class TicTacToe {
 	public boolean singlePlay(int move){
 
 		if(move > 0 && move <= 9 && !(this.board.setMoved(move))){
-			this.board.setMove(move, this.player);
+			setMove(move, this.player);
 			changePlayer(this.player);
 			return true;
 		}
@@ -50,40 +54,52 @@ public class TicTacToe {
 			this.player = 'X';
 		}
 	}
-
+	public char whatPlayer(int row, int col) {
+		return board.getBoardValue(row,col);
+	}
 	public boolean isWinner(int row, int col){
 		 boolean winner = false;
 		 char currPlayer = board.getBoardValue(row,col);
 		 int count = 0;
-		 
+	
 		 //athugum larett
 		 for(int i = 0; i < SIZE; i++){
 			 if(this.board.getBoardValue(i,col) == currPlayer)
 				 count++;
 		 }
-		 winner = win(count);
+		 if(count==3){
+			 	return true;
+		 }
+		 count = 0;
 		 
 		 //athugum lodrett
 		 for(int j = 0; j < SIZE; j++){
 			 if(this.board.getBoardValue(row,j) == currPlayer)
 				 count++;
 		 }
-		 winner = win(count);
-		 
+		 if(count==3){
+			 	return true;
+		 }
+		 count = 0;
+		
 		 //athugum a ska fra vinstri
 		 for(int i = 0; i < SIZE; i++){
 			 if(this.board.getBoardValue(i,i) == currPlayer)
 				 count++;
 		 }
-		 winner = win(count);
-		 
+		 if(count==3){
+			 	return true;
+		 }
+		 count = 0;
 		 //athugum a ska fra haegri
 		 for(int j = 0; j < SIZE; j++){
 			 if(this.board.getBoardValue(j,2-j) == currPlayer)
 				 count++;
 		 }
-		 winner = win(count);
-		 
+		 if(count==3){
+		 	return true;
+		 }
+		
 		 return winner;
 	 }
 
@@ -91,14 +107,11 @@ public class TicTacToe {
 	 	return board.getSize();
 	 }
 
- 	 public boolean win(int count){
-	 boolean win = false;
-	 if(count == SIZE) {
-		 win = true;
+ 	public void setMove(int move, char player){
+		int row = (move - 1) / 3;
+		int col = (move + 2) % 3;
+		this.board.setBoardMove(row, col, player);
 	 }
-	 count = 0;
-	 return win;
- 	}
 
 	 public boolean full(){
 
