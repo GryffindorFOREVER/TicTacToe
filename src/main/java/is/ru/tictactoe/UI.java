@@ -36,14 +36,14 @@ public class UI {
 			move = in.nextInt();
 			System.out.println();
 			
-			if(!gamePlay.singlePlay(move)){
+			//if(!gamePlay.singlePlay(move)){
 				System.out.println();
 				System.out.println("Invalid move! Try again");
 				System.out.println();
-			}
-			else{
+			//}
+			//else{
 				gamePlay.singlePlay(move);
-			}
+			//}
 			
 			
 		}

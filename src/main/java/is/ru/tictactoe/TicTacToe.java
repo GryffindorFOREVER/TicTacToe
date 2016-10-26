@@ -24,27 +24,22 @@ public class TicTacToe {
 		return this.player;
 	}
 	
-	public boolean singlePlay(int move){
+	public int singlePlay(int move){
 
 		if(move > 0 && move <= 9 && !(this.board.setMoved(move))){
 			setMove(move, this.player);
+			int row = getRow(move);
+			int col = getColumn(move);
+			if(isWinner(row, col)) {
+				return 1;			//return 1 if there is a winner
+			}
 			changePlayer(this.player);
-			return true;
+			return 0;				//return 0 if move was valid
 		}
 			
-		return false;
+		return -1;					//return -1 if move was invalid
 		
 	}
-	
-	/*public char changePlayer(char player){
-		if(player == 'X'){
-			
-			return 'O';
-		}
-		else{
-			return 'X';
-		}
-	}*/
 	
 	public void changePlayer(char player){
 		if(player == 'X'){
@@ -105,11 +100,19 @@ public class TicTacToe {
 
 	 public int getSizeOfBoard(){
 	 	return board.getSize();
-	 }
-
+	}
+	
+	public int getRow(int number) {
+		return (number - 1) / 3;
+	}
+	
+	public int getColumn(int number) {
+		return ((number + 2) % 3);
+	}
+		
  	public void setMove(int move, char player){
-		int row = (move - 1) / 3;
-		int col = (move + 2) % 3;
+		int row = getRow(move);
+		int col = getColumn(move);
 		this.board.setBoardMove(row, col, player);
 	 }
 
