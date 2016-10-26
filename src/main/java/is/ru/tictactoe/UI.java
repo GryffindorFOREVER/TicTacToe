@@ -33,8 +33,8 @@ public class UI {
 			displayBoard();
 			System.out.println("Choose a tile from 1 to 9");
 			System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
-			move = scanner.nextInt();
-			gamePlay.singlePlay(move);
+			//move = scanner.nextInt();
+			//gamePlay.singlePlay(move);
 		}
 	}
 
