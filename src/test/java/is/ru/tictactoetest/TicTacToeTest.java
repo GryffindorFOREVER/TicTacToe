@@ -126,4 +126,9 @@ public class TicTacToeTest {
 		TicTacToe t = new TicTacToe();
 		assertEquals(0, t.getRow(2));
 	}
+	
+	public void testGetColumn() {
+		TicTacToe t = new TicTacToe();
+		assertEquals(1, t.getColumn(2));
+	}
 }

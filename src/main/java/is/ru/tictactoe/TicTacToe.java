@@ -100,6 +100,10 @@ public class TicTacToe {
 	public int getRow(int number) {
 		return (number - 1) / 3;
 	}
+	
+	public int getColumn(int number) {
+		return ((number + 2) % 3);
+	}
 		
  	public void setMove(int move, char player){
 		int row = (move - 1) / 3;
