@@ -13,11 +13,8 @@ public class Board {
 			 }
 		 }
 	 }
-	 
-	 public void setMove(int move, char player){
-		int row = (move - 1) / 3;
-		int column = (move + 2) % 3;
-		this.board[row][column] = player;
+	 public void setBoardMove(int row, int col, char player){
+		 this.board[row][col] = player;
 	 }
 	 
 	 public boolean setMoved(int move) {

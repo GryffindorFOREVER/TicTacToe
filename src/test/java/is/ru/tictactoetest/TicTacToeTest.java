@@ -18,14 +18,31 @@ public class TicTacToeTest {
    public void testWhatPlayer(){
    		assertEquals('O', TicTacToe.changePlayer('X'));
    }
-   
+   */
    @Test
 	public void XwinsDiagonalFromUpperLeft()
 	{
-		TicTacToe.Move(board[1][1], board[1][0], board[0][0], board[1][2], board[2][2]);
-	    Assert.Equals(Board.isWinner(2, 2), true);
+	   	TicTacToe t = new TicTacToe();
+		t.setMove(1,'X');
+		t.setMove(2, 'O');
+		t.setMove(5, 'X');
+		t.setMove(3, 'O');
+		t.setMove(9, 'X');
+	    assertTrue(t.isWinner(2, 2));
 	}
-	
+/*	
+	@Test
+   public void Whatplayer(){
+	   Board b = new Board();
+	   b.getBoard();
+	   TicTacToe t = new TicTacToe();
+	   b.setMove(1,'X');
+	   assertEquals(t.whatPlayer(0,0), 'X');
+	   b.setMove(2,'O');
+	   assertEquals(t.whatPlayer(0,1), 'O');
+	   
+   }
+
 	@Test
 	public void OwinsDiagonalFromUpperLeft()
 	{
@@ -79,12 +96,6 @@ public class TicTacToeTest {
 	public void testFull(){
 		TicTacToe b = new TicTacToe();
 	 	assertFalse(b.full());
-	}
-
-	@Test
-	public void testWin(){
-		TicTacToe b = new TicTacToe();
-		assertTrue(b.win(3));
 	}
 
 	@Test
