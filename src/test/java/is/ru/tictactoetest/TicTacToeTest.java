@@ -30,67 +30,95 @@ public class TicTacToeTest {
 		t.setMove(9, 'X');
 	    assertTrue(t.isWinner(2, 2));
 	}
-/*	
-	@Test
-   public void Whatplayer(){
-	   Board b = new Board();
-	   b.getBoard();
-	   TicTacToe t = new TicTacToe();
-	   b.setMove(1,'X');
-	   assertEquals(t.whatPlayer(0,0), 'X');
-	   b.setMove(2,'O');
-	   assertEquals(t.whatPlayer(0,1), 'O');
-	   
-   }
 
 	@Test
 	public void OwinsDiagonalFromUpperLeft()
 	{
-		TicTacToe.Move(board[1][2], board[0][0], board[0][2], board[1][1], board[2][0], board[2][2]);
-	    Assert.Equals(Board.isWinner(2, 2), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(3,'X');
+		t.setMove(1, 'O');
+		t.setMove(2, 'X');
+		t.setMove(5, 'O');
+		t.setMove(8, 'X');
+		t.setMove(9, 'O');
+	    assertTrue(t.isWinner(2, 2));
 	}
 	
 	@Test
 	public void XwinsDiagonalFromUpperRigth()
 	{
-		TicTacToe.Move(board[0][2], board[0][0], board[1][1], board[0][1], board[2][0]);
-	    Assert.Equals(Board.isWinner(2, 0), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(3,'X');
+		t.setMove(1, 'O');
+		t.setMove(5, 'X');
+		t.setMove(2, 'O');
+		t.setMove(7, 'X');
+	    assertTrue(t.isWinner(0, 2));
 	}
 	
 	@Test
 	public void OwinsDiagonalFromUpperRigth()
 	{
-		TicTacToe.Move(board[2][2], board[0][2], board[0][0], board[1][1], board[0][1], board[2][0]);
-	    Assert.Equals(Board.isWinner(2, 0), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(1,'X');
+		t.setMove(3, 'O');
+		t.setMove(2, 'X');
+		t.setMove(5, 'O');
+		t.setMove(8, 'X');
+		t.setMove(7, 'O');
+	    assertTrue(t.isWinner(0, 2));
 	}
-	
+
 	@Test
 	public void XwinsVertical()
 	{
-		TicTacToe.Move(board[1][1], board[0][0], board[0][1], board[2][2], board[2][1]);
-	    Assert.Equals(Board.isWinner(2, 1), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(3,'X');
+		t.setMove(1, 'O');
+		t.setMove(6, 'X');
+		t.setMove(5, 'O');
+		t.setMove(9, 'X');
+	    assertTrue(t.isWinner(2, 2));
 	}
 	
 	@Test
 	public void OwinsVertical()
 	{
-		TicTacToe.Move(board[1][2], board[1][1], board[0][0], board[0][1], board[2][2], board[2][1]);
-	    Assert.Equals(Board.isWinner(2, 1), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(1,'X');
+		t.setMove(2, 'O');
+		t.setMove(3, 'X');
+		t.setMove(5, 'O');
+		t.setMove(7, 'X');
+		t.setMove(8, 'O');
+	    assertTrue(t.isWinner(0, 1));
 	}
 	
 	@Test
 	public void XwinsHorizontal()
 	{
-		TicTacToe.Move(board[1][1], board[0][0], board[1][0], board[2][2], board[1][2]);
-	    Assert.Equals(Board.isWinner(1, 2), true);
+	    TicTacToe t = new TicTacToe();
+		t.setMove(7,'X');
+		t.setMove(1, 'O');
+		t.setMove(8, 'X');
+		t.setMove(5, 'O');
+		t.setMove(9, 'X');
+	    assertTrue(t.isWinner(2, 2));
 	}
-	
+
 	@Test
 	public void OwinsHorizontal()
 	{
-		TicTacToe.Move(board[0][1], board[1][1], board[0][0], board[1][0], board[2][2], board[1][2]);
-	    Assert.Equals(Board.isWinner(1, 2), true);
-	}*/
+	    TicTacToe t = new TicTacToe();
+		t.setMove(4,'X');
+		t.setMove(1, 'O');
+		t.setMove(9, 'X');
+		t.setMove(2, 'O');
+		t.setMove(8, 'X');
+		t.setMove(3, 'O');
+	    assertTrue(t.isWinner(0, 1));
+	}
+	
 
 	@Test
 	public void testFull(){
