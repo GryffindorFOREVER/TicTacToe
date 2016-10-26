@@ -9,7 +9,7 @@ public class UI {
 	
 	public UI(){
 		gamePlay = new TicTacToe();
-		//in = new Scanner(System.in);
+		in = new Scanner(System.in);
 	}
 
 
@@ -28,11 +28,13 @@ public class UI {
 	}
 
 	public void letsPlay(){
+		int move;
 		while(!gamePlay.full()){
 			displayBoard();
 			System.out.println("Choose a tile from 1 to 9");
-
 			System.out.println("Player " + gamePlay.getPlayer() + " make your move ");
+			move = scanner.nextInt();
+			gamePlay.singlePlay(move);
 		}
 	}
 
