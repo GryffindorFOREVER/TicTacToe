@@ -8,17 +8,7 @@ public class TicTacToeTest {
 	public static void main(String args[]) {
     	org.junit.runner.JUnitCore.main("is.ru.tictactoetest.TicTacToeTest");
 	}
-	/*
-   @Test
-   public void testYOLO() {
-	   TicTacToe tic = new TicTacToe();
-	   assertEquals("YOLO", tic.YOLO());	
-   }	*/
- /*  @Test
-   public void testWhatPlayer(){
-   		assertEquals('O', TicTacToe.changePlayer('X'));
-   }
-   */
+
    @Test
 	public void XwinsDiagonalFromUpperLeft()
 	{
@@ -158,13 +148,23 @@ public class TicTacToeTest {
 		assertTrue(b.singlePlay(9));
 	}
 	
+	@Test
 	public void testGetRow() {
 		TicTacToe t = new TicTacToe();
 		assertEquals(0, t.getRow(2));
 	}
 	
+	@Test
 	public void testGetColumn() {
 		TicTacToe t = new TicTacToe();
 		assertEquals(1, t.getColumn(2));
 	}
+	
+	@Test
+	public void testSetMove() {
+		TicTacToe t = new TicTacToe();
+    	t.setMove(8 , 'O');
+		assertTrue(t.setMoved(8));
+	}
+	
 }

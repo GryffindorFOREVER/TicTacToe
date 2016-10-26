@@ -17,14 +17,14 @@ public class Board {
 		 this.board[row][col] = player;
 	 }
 	 
-	 public boolean setMoved(int move) {
+	 /*public boolean setMoved(int move) {
 		int row = (move - 1) / 3;
 		int column = (move + 2) % 3;
 		if(board[row][column] == ' ') {
 			return false;
 		}
 		return true;
-	 }
+	 }*/
 
 	 public char[][] getBoard(){
 	 	return this.board;

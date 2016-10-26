@@ -25,7 +25,7 @@ public class TicTacToe {
 	}
 	
 	public boolean checkValid(int move) {
-		if(move > 0 && move <= 9 && !(this.board.setMoved(move))) {
+		if(move > 0 && move <= 9 && !(setMoved(move))) {
 			return true;
 		}
 		return false;
@@ -113,6 +113,15 @@ public class TicTacToe {
 		int row = getRow(move);
 		int col = getColumn(move);
 		this.board.setBoardMove(row, col, player);
+	}
+	 
+	public boolean setMoved(int move) {
+		int row = getRow(move);
+		int column = getColumn(move);
+		if(this.board.getBoardValue(row, column) == ' ') {
+			return false;
+		}
+		return true;
 	 }
 
 	 public boolean full(){
