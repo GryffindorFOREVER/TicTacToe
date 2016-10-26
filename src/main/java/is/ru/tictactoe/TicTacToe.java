@@ -106,8 +106,8 @@ public class TicTacToe {
 	}
 		
  	public void setMove(int move, char player){
-		int row = (move - 1) / 3;
-		int col = (move + 2) % 3;
+		int row = getRow(move);
+		int col = getColumn(move);
 		this.board.setBoardMove(row, col, player);
 	 }
 
