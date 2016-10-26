@@ -139,15 +139,15 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void testSinglePlayValid(){
+	public void checkIfValid(){
 		TicTacToe b = new TicTacToe();
-		assertEquals(0, b.singlePlay(3));
+		assertTrue(b.checkValid(3));
 	}
 	
 	@Test
-	public void testSinglePlayInvalid(){
+	public void checkIfInvalid(){
 		TicTacToe b = new TicTacToe();
-		assertEquals(-1, b.singlePlay(12));
+		assertFalse(b.checkValid(12));
 	}
 	
 	@Test
@@ -155,7 +155,7 @@ public class TicTacToeTest {
 		TicTacToe b = new TicTacToe();
 		b.setMove(1, 'X');
 		b.setMove(5, 'X');
-		assertEquals(1, b.singlePlay(9));
+		assertTrue(b.singlePlay(9));
 	}
 	
 	public void testGetRow() {

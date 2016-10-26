@@ -24,21 +24,21 @@ public class TicTacToe {
 		return this.player;
 	}
 	
-	public int singlePlay(int move){
-
-		if(move > 0 && move <= 9 && !(this.board.setMoved(move))){
-			setMove(move, this.player);
-			int row = getRow(move);
-			int col = getColumn(move);
-			if(isWinner(row, col)) {
-				return 1;			//return 1 if there is a winner
-			}
-			changePlayer(this.player);
-			return 0;				//return 0 if move was valid
+	public boolean checkValid(int move) {
+		if(move > 0 && move <= 9 && !(this.board.setMoved(move))) {
+			return true;
 		}
-			
-		return -1;					//return -1 if move was invalid
-		
+		return false;
+	}
+	public boolean singlePlay(int move){
+		setMove(move, this.player);
+		int row = getRow(move);
+		int col = getColumn(move);
+		if(isWinner(row, col)) {
+			return true;		
+		}
+		changePlayer(this.player);
+		return false;
 	}
 	
 	public void changePlayer(char player){
