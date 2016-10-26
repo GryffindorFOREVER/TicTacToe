@@ -121,5 +121,9 @@ public class TicTacToeTest {
 		TicTacToe b = new TicTacToe();
 		assertFalse(b.singlePlay(12));
 	}
-
+	
+	public void testGetRow() {
+		TicTacToe t = new TicTacToe();
+		assertEquals(0, t.getRow(2));
+	}
 }

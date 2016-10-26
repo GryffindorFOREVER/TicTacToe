@@ -36,16 +36,6 @@ public class TicTacToe {
 		
 	}
 	
-	/*public char changePlayer(char player){
-		if(player == 'X'){
-			
-			return 'O';
-		}
-		else{
-			return 'X';
-		}
-	}*/
-	
 	public void changePlayer(char player){
 		if(player == 'X'){
 			this.player = 'O';
@@ -105,8 +95,12 @@ public class TicTacToe {
 
 	 public int getSizeOfBoard(){
 	 	return board.getSize();
-	 }
-
+	}
+	
+	public int getRow(int number) {
+		return (number - 1) / 3;
+	}
+		
  	public void setMove(int move, char player){
 		int row = (move - 1) / 3;
 		int col = (move + 2) % 3;
