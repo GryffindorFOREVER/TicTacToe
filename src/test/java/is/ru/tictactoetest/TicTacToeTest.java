@@ -111,15 +111,23 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void testSinglePlayPass(){
+	public void testSinglePlayValid(){
 		TicTacToe b = new TicTacToe();
-		assertTrue(b.singlePlay(3));
+		assertEquals(0, b.singlePlay(3));
 	}
 	
 	@Test
-	public void testSinglePlayFail(){
+	public void testSinglePlayInvalid(){
 		TicTacToe b = new TicTacToe();
-		assertFalse(b.singlePlay(12));
+		assertEquals(-1, b.singlePlay(12));
+	}
+	
+	@Test
+	public void testSinglePlayWin(){
+		TicTacToe b = new TicTacToe();
+		b.setMove(1, 'X');
+		b.setMove(5, 'X');
+		assertEquals(1, b.singlePlay(9));
 	}
 	
 	public void testGetRow() {
