@@ -105,13 +105,20 @@ public class TicTacToeTest {
 		t.setMove(9, 'X');
 	    assertTrue(t.isWinner(2, 2));
 	}
-/*	
+
 	@Test
 	public void OwinsHorizontal()
 	{
-		TicTacToe.Move(board[0][1], board[1][1], board[0][0], board[1][0], board[2][2], board[1][2]);
-	    Assert.Equals(Board.isWinner(1, 2), true);
-	}*/
+	    TicTacToe t = new TicTacToe();
+		t.setMove(4,'X');
+		t.setMove(1, 'O');
+		t.setMove(9, 'X');
+		t.setMove(2, 'O');
+		t.setMove(8, 'X');
+		t.setMove(3, 'O');
+	    assertTrue(t.isWinner(0, 1));
+	}
+	
 
 	@Test
 	public void testFull(){
