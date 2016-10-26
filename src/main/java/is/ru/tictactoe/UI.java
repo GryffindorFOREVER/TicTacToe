@@ -27,25 +27,44 @@ public class UI {
 		}
 	}
 
+	public void newGame(){
+		this.gamePlay = new TicTacToe();
+	}
+
 	public void letsPlay(){
 		int move;
-		while(!gamePlay.full()){
+		String playAgain = "";
+
+		while(!gamePlay.full() || playAgain == "y" || playAgain == "Y"){
 			displayBoard();
 			System.out.println("Choose an empty tile from 1 to 9");
 			System.out.print("Player " + gamePlay.getPlayer() + ": ");
 			move = in.nextInt();
 			System.out.println();
 			
-			//if(!gamePlay.singlePlay(move)){
+			if(!gamePlay.checkValid(move)){
 				System.out.println();
 				System.out.println("Invalid move! Try again");
 				System.out.println();
-			//}
-			//else{
-				gamePlay.singlePlay(move);
-			//}
-			
-			
+			}
+			else{
+				gamePlay.setMove(move, gamePlay.getPlayer());
+				if(gamePlay.isWinner(move)){
+					displayBoard();
+					System.out.println(gamePlay.getPlayer() + " is the WINNER!!!");
+					System.out.print("Do you want to play again (y/n): ");
+					playAgain = in.next();
+					System.out.println();
+					System.out.println(playAgain);
+					if(playAgain == "y" || playAgain == "Y"){
+						newGame();
+					}
+				}
+				else{
+					gamePlay.changePlayer(gamePlay.getPlayer());	
+				}
+				
+			}
 		}
 	}
 
