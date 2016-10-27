@@ -30,16 +30,16 @@ public class TicTacToe {
 		}
 		return false;
 	}
-	public boolean singlePlay(int move){
+	/*public void singlePlay(int move){
 		setMove(move, this.player);
 		int row = getRow(move);
 		int col = getColumn(move);
-		if(isWinner(row, col)) {
+		/*if(isWinner(row, col)) {
 			return true;		
 		}
-		changePlayer(this.player);
-		return false;
-	}
+		//changePlayer(this.player);
+		
+	}*/
 	
 	public void changePlayer(char player){
 		if(player == 'X'){
@@ -52,9 +52,11 @@ public class TicTacToe {
 	public char whatPlayer(int row, int col) {
 		return board.getBoardValue(row,col);
 	}
-	public boolean isWinner(int row, int col){
-		 char currPlayer = board.getBoardValue(row,col);
-		 int count = 0;
+	public boolean isWinner(int move){
+		int row = getRow(move);
+		int col = getColumn(move);
+		char currPlayer = board.getBoardValue(row,col);
+		int count = 0;
 	
 		 //athugum larett
 		 for(int i = 0; i < SIZE; i++){

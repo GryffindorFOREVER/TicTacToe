@@ -18,7 +18,7 @@ public class TicTacToeTest {
 		t.setMove(5, 'X');
 		t.setMove(3, 'O');
 		t.setMove(9, 'X');
-	    assertTrue(t.isWinner(2, 2));
+	    assertTrue(t.isWinner(9));
 	}
 
 	@Test
@@ -31,7 +31,7 @@ public class TicTacToeTest {
 		t.setMove(5, 'O');
 		t.setMove(8, 'X');
 		t.setMove(9, 'O');
-	    assertTrue(t.isWinner(2, 2));
+	    assertTrue(t.isWinner(9));
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class TicTacToeTest {
 		t.setMove(5, 'X');
 		t.setMove(2, 'O');
 		t.setMove(7, 'X');
-	    assertTrue(t.isWinner(0, 2));
+	    assertTrue(t.isWinner(3));
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ public class TicTacToeTest {
 		t.setMove(5, 'O');
 		t.setMove(8, 'X');
 		t.setMove(7, 'O');
-	    assertTrue(t.isWinner(0, 2));
+	    assertTrue(t.isWinner(3));
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public class TicTacToeTest {
 		t.setMove(6, 'X');
 		t.setMove(5, 'O');
 		t.setMove(9, 'X');
-	    assertTrue(t.isWinner(2, 2));
+	    assertTrue(t.isWinner(9));
 	}
 	
 	@Test
@@ -81,7 +81,7 @@ public class TicTacToeTest {
 		t.setMove(5, 'O');
 		t.setMove(7, 'X');
 		t.setMove(8, 'O');
-	    assertTrue(t.isWinner(0, 1));
+	    assertTrue(t.isWinner(5));
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ public class TicTacToeTest {
 		t.setMove(8, 'X');
 		t.setMove(5, 'O');
 		t.setMove(9, 'X');
-	    assertTrue(t.isWinner(2, 2));
+	    assertTrue(t.isWinner(9));
 	}
 
 	@Test
@@ -106,7 +106,7 @@ public class TicTacToeTest {
 		t.setMove(2, 'O');
 		t.setMove(8, 'X');
 		t.setMove(3, 'O');
-	    assertTrue(t.isWinner(0, 1));
+	    assertTrue(t.isWinner(3));
 	}
 	
 
@@ -138,14 +138,6 @@ public class TicTacToeTest {
 	public void checkIfInvalid(){
 		TicTacToe b = new TicTacToe();
 		assertFalse(b.checkValid(12));
-	}
-	
-	@Test
-	public void testSinglePlayWin(){
-		TicTacToe b = new TicTacToe();
-		b.setMove(1, 'X');
-		b.setMove(5, 'X');
-		assertTrue(b.singlePlay(9));
 	}
 	
 	@Test
