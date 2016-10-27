@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
-JAR="tictactoe.jar"
+APP="tictactoe"
 
 bin/clean
 bin/package
 
-test -f /tmp/${JAR} && rm /tmp/${JAR}
-cp build/libs/${JAR} /tmp
+test -f /tmp/${APP} && rm -r /tmp/${APP}
+cp -r build/install/${APP} /tmp
 
-java -jar /tmp/${JAR}
+/tmp/${APP}/bin/${APP}

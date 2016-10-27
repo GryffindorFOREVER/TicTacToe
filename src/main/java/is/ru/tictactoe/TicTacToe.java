@@ -1,6 +1,7 @@
 package is.ru.tictactoe;
 
 import java.util.Scanner;
+import com.google.gson.Gson;
 
 public class TicTacToe {
 	private Board board;
@@ -14,6 +15,10 @@ public class TicTacToe {
 
 	public char[][] getBoardFromBoardClass(){
 		return board.getBoard();
+	}
+	
+	public String jsonYOLO() {
+		return new Gson().toJson("YOLO");
 	}
 	
 	public Board getBoard(){
