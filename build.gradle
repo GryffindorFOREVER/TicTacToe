@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "is.ru.tictactoe.TicTacToe" //this depends on the name of our class so it might change
+mainClassName = "is.ru.tictactoe.MainWeb" //this depends on the name of our class so it might change
 
 
 // In this section you declare where to find the dependencies of your project
@@ -18,14 +18,16 @@ dependencies {
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
+    compile 'com.sparkjava:spark-core:2.3'
+    compile 'com.google.code.gson:gson:2.3'
     testCompile 'junit:junit:4.12'
 }
 
-jar {
-     manifest {
-          attributes("Main-Class": "is.ru.tictactoe.Main")
-	  }
-}
+//jar {
+//     manifest {
+//          attributes("Main-Class": "is.ru.tictactoe.Main")
+//	  }
+//}
 
 task stage{
 	dependsOn installDist
