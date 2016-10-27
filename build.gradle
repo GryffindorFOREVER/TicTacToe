@@ -26,3 +26,8 @@ jar {
           attributes("Main-Class": "is.ru.tictactoe.Main")
 	  }
 }
+
+task stage{
+	dependsOn installDist
+}
+
