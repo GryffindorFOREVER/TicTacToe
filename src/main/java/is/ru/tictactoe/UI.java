@@ -30,9 +30,27 @@ public class UI {
 		this.gamePlay = new TicTacToe();
 	}
 
+	public char playAgain(char playAgain){
+		do {
+			System.out.print("Do you want to play again (y/n): ");
+			playAgain = in.next().charAt(0); 
+
+			if(playAgain == 'y'){
+				newGame();
+				break;
+			}
+			else if(playAgain != 'n'){
+				System.out.println("Please choose y or n. ");
+			}
+
+		} while(playAgain != 'y' && playAgain != 'n');
+
+		return playAgain;
+	}
+
 	public void letsPlay(){
 		String move;
-		char playAgain = 'n';
+		char playAgain = 'b';
 
 		while(!gamePlay.full()){
 			displayBoard();
@@ -52,20 +70,22 @@ public class UI {
 				if(gamePlay.isWinner(intMove)){
 					displayBoard();
 					System.out.println(gamePlay.getPlayer() + " is the WINNER!!!");
-					System.out.print("Do you want to play again (y/n): ");
-					playAgain = in.next().charAt(0);
 					System.out.println();
-					if(playAgain == 'y'){
-						newGame();
-					}else{
-						System.out.println("Thanks for playing!");
-						break;
-					}
+					playAgain = playAgain(playAgain);
+				}
+				else if(!gamePlay.isWinner(intMove) && gamePlay.full()){
+					System.out.println("DRAW!");
+					playAgain = playAgain(playAgain);
 				}
 				else{
 					gamePlay.changePlayer(gamePlay.getPlayer());	
 				}
-			}
+
+				if(playAgain == 'n'){
+					System.out.println("Thanks for playing!");
+					break;
+				}
+			}	
 		}
 	} 
 }
