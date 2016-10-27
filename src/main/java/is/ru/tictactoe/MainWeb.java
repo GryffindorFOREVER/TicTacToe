@@ -6,8 +6,6 @@ import spark.servlet.SparkApplication;
 
 public class MainWeb implements SparkApplication{
 	
-
-
 	public static void main(String[] args){
 		
 		staticFileLocation("/public");
@@ -17,19 +15,14 @@ public class MainWeb implements SparkApplication{
          if (port != null) {
              setPort(Integer.valueOf(port));
          }
-		 
-		 //final TicTacToe tic = new TicTacToe();
-		//System.out.println(tic.jsonYOLO());
 		
 		MainWeb.init();		
 		
 	}
 	
-		
 	@Override
     public void init() {
 		final TicTacToe tic = new TicTacToe();
-		System.out.println(tic.jsonYOLO());
-		get("/random", (req, res) -> tic.getPlayer());
+		post("/random", (req, res) -> tic.getPlayer());
 	}
 }
