@@ -131,13 +131,25 @@ public class TicTacToeTest {
 	@Test
 	public void checkIfValid(){
 		TicTacToe b = new TicTacToe();
-		assertTrue(b.checkValid(3));
+		assertTrue(b.checkValid("3"));
 	}
 	
 	@Test
 	public void checkIfInvalid(){
 		TicTacToe b = new TicTacToe();
-		assertFalse(b.checkValid(12));
+		assertFalse(b.checkValid("12"));
+	}
+	
+	@Test
+	public void checkIfChar(){
+		TicTacToe b = new TicTacToe();
+		assertFalse(b.checkValid("b"));
+	}
+	
+	@Test
+	public void checkIfCharSequence(){
+		TicTacToe b = new TicTacToe();
+		assertFalse(b.checkValid("YOLO"));
 	}
 	
 	@Test
