@@ -24,8 +24,18 @@ public class TicTacToe {
 		return this.player;
 	}
 	
-	public boolean checkValid(int move) {
-		if(move > 0 && move <= 9 && !(setMoved(move))) {
+	public boolean checkValid(String move) {
+		if(move.length() > 1) {
+			return false;
+		}
+		try {
+			int intMove = Integer.parseInt(move);
+		} catch(Exception e)
+		{
+		   return false;
+		}
+		int intMove = Integer.parseInt(move);
+		if(intMove > 0 && intMove <= 9 && !(setMoved(intMove))) {
 			return true;
 		}
 		return false;

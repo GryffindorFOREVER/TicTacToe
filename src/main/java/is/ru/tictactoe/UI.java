@@ -12,7 +12,6 @@ public class UI {
 		in = new Scanner(System.in);
 	}
 
-
 	public void displayBoard(){
 		char[][] b = gamePlay.getBoardFromBoardClass(); 
 		int sz = gamePlay.getSizeOfBoard();
@@ -32,14 +31,14 @@ public class UI {
 	}
 
 	public void letsPlay(){
-		int move;
-		String playAgain = "";
+		String move;
+		char playAgain = 'n';
 
-		while(!gamePlay.full() || playAgain == "y" || playAgain == "Y"){
+		while(!gamePlay.full()){
 			displayBoard();
 			System.out.println("Choose an empty tile from 1 to 9");
 			System.out.print("Player " + gamePlay.getPlayer() + ": ");
-			move = in.nextInt();
+			move = in.next();
 			System.out.println();
 			
 			if(!gamePlay.checkValid(move)){
@@ -48,40 +47,25 @@ public class UI {
 				System.out.println();
 			}
 			else{
-				gamePlay.setMove(move, gamePlay.getPlayer());
-				if(gamePlay.isWinner(move)){
+				int intMove = Integer.parseInt(move);
+				gamePlay.setMove(intMove, gamePlay.getPlayer());
+				if(gamePlay.isWinner(intMove)){
 					displayBoard();
 					System.out.println(gamePlay.getPlayer() + " is the WINNER!!!");
 					System.out.print("Do you want to play again (y/n): ");
-					playAgain = in.next();
+					playAgain = in.next().charAt(0);
 					System.out.println();
-					System.out.println(playAgain);
-					if(playAgain == "y" || playAgain == "Y"){
+					if(playAgain == 'y'){
 						newGame();
+					}else{
+						System.out.println("Thanks for playing!");
+						break;
 					}
 				}
 				else{
 					gamePlay.changePlayer(gamePlay.getPlayer());	
 				}
-				
 			}
 		}
-	}
-
-
-	 	
-	 	/*int k = 0;
-		 	for(int i = 0; i < SIZE; i++){
-		 		for(int j = 0; j < SIZE; j++){
-		 			if(board[i][j] == ' '){
-		 				System.out.print(k);
-		 			}
-		 			else{
-		 				System.out.print(board[i][j]);
-		 			}
-		 			k++;
-		 		}
-		 		System.out.println();
-		 	}
-	 	}*/
+	} 
 }
