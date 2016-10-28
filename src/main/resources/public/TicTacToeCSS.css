@@ -1,0 +1,60 @@
+body{
+	/*padding: 0px 10px 130px 10px; /*Top - Right - Bottom - Left*/
+	background-color: #FFF;
+	font-family: calibri, arial, sans-serif;
+	font-size: 16px;
+	background: rgb(38, 38, 38);
+}
+
+h1{
+	background: rgb(38, 38, 38);
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: white;
+}
+
+form{
+	padding: 5% 0%;
+}
+
+.container{
+	width: 1220px;
+	margin-left: 20%;
+	color: white;
+}
+
+.houseSorting{
+	float: left;
+	width: 20%;
+	color: white;
+}
+
+.gridArea{
+	float: right;
+	width: 70%;
+	color: white;
+}
+
+.square{
+    width:100px;
+    height:100px;
+	background: white;
+}
+
+.v{
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+}
+
+.h{
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+
+
+
+
+
+
+
