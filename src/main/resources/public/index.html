@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Wizards TicTacToe</title>
+		<title>Wizard TicTacToe</title>
 		<link rel="stylesheet" href="TicTacToeCSS.css" media="screen" />
 	</head>
 	<body>
-		<h1>Hogwart's TicTacToe</h1>
-		<h2>House sorting</h2>
+		<div class="container">
+			<h1 class="header">Wizard TicTacToe</h1>
+			<div class="gridArea">
+				<table>
+					<tr id="row1">
+						<td class="square"></td>
+						<td class="square v"></td>
+						<td class="square"></td>
+					</tr>
+					<tr id="row2">
+						<td class="square h"></td>
+						<td class="square v h"></td>
+						<td class="square h"></td>
+					</tr>
+					<tr id="row3">
+						<td class="square"></td>
+						<td class="square v"></td>
+						<td class="square"></td>
+					</tr>
+				</table>
+			</div>
 
-		<form action="/player1" method="post">
-			<fieldset>
-				<legend>Player 1:</legend>
-				<div>
-					<label for="player1">Houses:</label>
-					<select id="player1" name="houses">
-						<option value="gryffindor">Gryffindor</option>
-						<option value="slytherin">Slytherin</option>
-						<option value="hufflepuff">Hufflepuff</option>
-						<option value="ravenclaw">Ravenclaw</option>
-					</select>
-					<input type="submit" value="Sorted"/>	
-				</div>
-			</fieldset>
-		</form>
+			
+			<div class="houseSorting">
+				<h2>House sorting</h2>
+					<form action="/player1" method="post">
+						<fieldset>
+							<legend>Player 1:</legend>
+							<div>
+								<label for="player1">House:</label>
+								<select id="player1" name="houses">
+									<option value="gryffindor">Gryffindor</option>
+									<option value="slytherin">Slytherin</option>
+									<option value="hufflepuff">Hufflepuff</option>
+									<option value="ravenclaw">Ravenclaw</option>
+								</select>
+								<input type="submit" value="Sort"/>	
+							</div>
+						</fieldset>
+					</form>
 
-		<form action="/player2" method="post">
-			<fieldset>
-				<legend>Player 2:</legend>
-				<div>
-					<label for="player2">Houses:</label>
-					<select id="player2" name="houses">
-						<option value="gryffindor">Gryffindor</option>
-						<option value="slytherin">Slytherin</option>
-						<option value="hufflepuff">Hufflepuff</option>
-						<option value="ravenclaw">Ravenclaw</option>
-					</select>
-					<input type="submit" value="Sorted"/>	
-				</div>
-			</fieldset>
-		</form>
-
-		<div>
-			<table>
-				<tr id="row1">
-					<td class="square"></td>
-					<td class="square v"></td>
-					<td class="square"></td>
-				</tr>
-				<tr id="row2">
-					<td class="square h"></td>
-					<td class="square v h"></td>
-					<td class="square h"></td>
-				</tr>
-				<tr id="row3">
-					<td class="square"></td>
-					<td class="square v"></td>
-					<td class="square"></td>
-				</tr>
-			</table>
+					<form action="/player2" method="post">
+						<fieldset>
+							<legend>Player 2:</legend>
+							<div>
+								<label for="player2">House:</label>
+								<select id="player2" name="houses">
+									<option value="gryffindor">Gryffindor</option>
+									<option value="slytherin">Slytherin</option>
+									<option value="hufflepuff">Hufflepuff</option>
+									<option value="ravenclaw">Ravenclaw</option>
+								</select>
+								<input type="submit" value="Sort"/>	
+							</div>
+						</fieldset>
+					</form>
+			</div>
 		</div>
 
 
