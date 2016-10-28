@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class UI {
 
 	private TicTacToe gamePlay;
+	private Player player;
 	private Scanner in;
 	
 	public UI(){
-		gamePlay = new TicTacToe();
+		player = new Player();
+		gamePlay = new TicTacToe(player);
 		in = new Scanner(System.in);
 	}
 
@@ -27,7 +29,7 @@ public class UI {
 	}
 
 	public void newGame(){
-		this.gamePlay = new TicTacToe();
+		this.gamePlay = new TicTacToe(player);
 	}
 
 	public char playAgain(char playAgain){
@@ -51,11 +53,20 @@ public class UI {
 	public void letsPlay(){
 		String move;
 		char playAgain = 'b';
-
+		
+		System.out.println("Player 1, choose a Name: ");
+		String player1 = in.next();
+		player.setPlayer1(player1);
+		gamePlay.setCurrentPlayer(player.getPlayer1());
+		
+		System.out.println("Player 2, choose a Name: ");
+		String player2 = in.next();
+		player.setPlayer2(player2);
+		
 		while(!gamePlay.full()){
 			displayBoard();
 			System.out.println("Choose an empty tile from 1 to 9");
-			System.out.print("Player " + gamePlay.getPlayer() + ": ");
+			System.out.print(gamePlay.getCurrentPlayer() + ": ");
 			move = in.next();
 			System.out.println();
 			
@@ -66,10 +77,10 @@ public class UI {
 			}
 			else{
 				int intMove = Integer.parseInt(move);
-				gamePlay.setMove(intMove, gamePlay.getPlayer());
+				gamePlay.setMove(intMove, gamePlay.getMark());
 				if(gamePlay.isWinner(intMove)){
 					displayBoard();
-					System.out.println(gamePlay.getPlayer() + " is the WINNER!!!");
+					System.out.println(gamePlay.getCurrentPlayer() + " is the WINNER!!!");
 					System.out.println();
 					playAgain = playAgain(playAgain);
 				}
@@ -77,9 +88,11 @@ public class UI {
 					System.out.println("DRAW!");
 					playAgain = playAgain(playAgain);
 				}
-				else{
-					gamePlay.changePlayer(gamePlay.getPlayer());	
-				}
+				/*else{
+					gamePlay.changePlayer(gamePlay.getCurrentPlayer());
+					
+					
+				}*/
 
 				if(playAgain == 'n'){
 					System.out.println("Thanks for playing!");
@@ -87,5 +100,6 @@ public class UI {
 				}
 			}	
 		}
-	} 
+	}
+	 
 }

@@ -12,7 +12,8 @@ public class TicTacToeTest {
    @Test
 	public void XwinsDiagonalFromUpperLeft()
 	{
-	   	TicTacToe t = new TicTacToe();
+	   Player player = new Player();
+	   	TicTacToe t = new TicTacToe(player);
 		t.setMove(1,'X');
 		t.setMove(2, 'O');
 		t.setMove(5, 'X');
@@ -24,7 +25,8 @@ public class TicTacToeTest {
 	@Test
 	public void OwinsDiagonalFromUpperLeft()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(3,'X');
 		t.setMove(1, 'O');
 		t.setMove(2, 'X');
@@ -37,7 +39,8 @@ public class TicTacToeTest {
 	@Test
 	public void XwinsDiagonalFromUpperRigth()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(3,'X');
 		t.setMove(1, 'O');
 		t.setMove(5, 'X');
@@ -49,7 +52,8 @@ public class TicTacToeTest {
 	@Test
 	public void OwinsDiagonalFromUpperRigth()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(1,'X');
 		t.setMove(3, 'O');
 		t.setMove(2, 'X');
@@ -62,7 +66,8 @@ public class TicTacToeTest {
 	@Test
 	public void XwinsVertical()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(3,'X');
 		t.setMove(1, 'O');
 		t.setMove(6, 'X');
@@ -74,7 +79,8 @@ public class TicTacToeTest {
 	@Test
 	public void OwinsVertical()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(1,'X');
 		t.setMove(2, 'O');
 		t.setMove(3, 'X');
@@ -87,7 +93,8 @@ public class TicTacToeTest {
 	@Test
 	public void XwinsHorizontal()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(7,'X');
 		t.setMove(1, 'O');
 		t.setMove(8, 'X');
@@ -99,7 +106,8 @@ public class TicTacToeTest {
 	@Test
 	public void OwinsHorizontal()
 	{
-	    TicTacToe t = new TicTacToe();
+		Player player = new Player();
+	    TicTacToe t = new TicTacToe(player);
 		t.setMove(4,'X');
 		t.setMove(1, 'O');
 		t.setMove(9, 'X');
@@ -112,61 +120,72 @@ public class TicTacToeTest {
 
 	@Test
 	public void testFull(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 	 	assertFalse(b.full());
 	}
 
 	@Test
 	public void testGetSizeOfBoard(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 		assertEquals(3, b.getSizeOfBoard());
 	}
 
 	@Test
-	public void testGetPlayer(){
-		TicTacToe t = new TicTacToe();
-		assertEquals('X', t.getPlayer());
+	public void testGetCurrentPlayer(){
+		Player player = new Player();
+		TicTacToe t = new TicTacToe(player);
+		t.setCurrentPlayer("haffa");
+		assertEquals("haffa", t.getCurrentPlayer());
 	}
 
 	@Test
 	public void checkIfValid(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 		assertTrue(b.checkValid("3"));
 	}
 	
 	@Test
 	public void checkIfInvalid(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 		assertFalse(b.checkValid("12"));
 	}
 	
 	@Test
 	public void checkIfChar(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 		assertFalse(b.checkValid("b"));
 	}
 	
 	@Test
 	public void checkIfCharSequence(){
-		TicTacToe b = new TicTacToe();
+		Player player = new Player();
+		TicTacToe b = new TicTacToe(player);
 		assertFalse(b.checkValid("YOLO"));
 	}
 	
 	@Test
 	public void testGetRow() {
-		TicTacToe t = new TicTacToe();
+		Player player = new Player();
+		TicTacToe t = new TicTacToe(player);
 		assertEquals(0, t.getRow(2));
 	}
 	
 	@Test
 	public void testGetColumn() {
-		TicTacToe t = new TicTacToe();
+		Player player = new Player();
+		TicTacToe t = new TicTacToe(player);
 		assertEquals(1, t.getColumn(2));
 	}
 	
 	@Test
 	public void testSetMove() {
-		TicTacToe t = new TicTacToe();
+		Player player = new Player();
+		TicTacToe t = new TicTacToe(player);
     	t.setMove(8 , 'O');
 		assertTrue(t.setMoved(8));
 	}
