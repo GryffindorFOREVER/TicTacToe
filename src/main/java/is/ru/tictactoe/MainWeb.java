@@ -22,7 +22,8 @@ public class MainWeb implements SparkApplication{
 	
 	@Override
     public void init() {
-		final TicTacToe tic = new TicTacToe();
-		post("/random", (req, res) -> tic.getPlayer());
+		Player player = new Player();
+		final TicTacToe tic = new TicTacToe(player);
+		post("/random", (req, res) -> tic.getCurrentPlayer());
 	}
 }
