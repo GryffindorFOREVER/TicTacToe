@@ -53,14 +53,17 @@ public class TicTacToe {
 		return false;
 	}
 	
-	/*public void changePlayer(char player){
-		if(player == 'X'){
-			this.player = 'O';
+	public void changePlayer(String currentPlayer){
+
+		if(currentPlayer == player.getPlayer1()){
+			setCurrentPlayer(player.getPlayer2());
+			mark = 'O';
 		}
 		else{
-			this.player = 'X';
+			setCurrentPlayer(player.getPlayer1());
+			mark = 'X';
 		}
-	}*/
+	}
 	
 	public boolean isWinner(int move){
 		int row = getRow(move);

@@ -189,5 +189,15 @@ public class TicTacToeTest {
     	t.setMove(8 , 'O');
 		assertTrue(t.setMoved(8));
 	}
+	@Test
+	public void testChangePlayer(){
+		Player player = new Player();
+		TicTacToe t = new TicTacToe(player);
+		player.setPlayer1("haffa");
+		player.setPlayer2("ausa");
+		t.setCurrentPlayer(player.getPlayer1());
+		t.changePlayer(t.getCurrentPlayer());
+		assertEquals("ausa", t.getCurrentPlayer());
+	}
 	
 }

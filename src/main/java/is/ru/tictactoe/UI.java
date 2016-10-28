@@ -30,6 +30,8 @@ public class UI {
 
 	public void newGame(){
 		this.gamePlay = new TicTacToe(player);
+		setPlayerNames();
+
 	}
 
 	public char playAgain(char playAgain){
@@ -49,11 +51,7 @@ public class UI {
 
 		return playAgain;
 	}
-
-	public void letsPlay(){
-		String move;
-		char playAgain = 'b';
-		
+	public void setPlayerNames(){
 		System.out.println("Player 1, choose a Name: ");
 		String player1 = in.next();
 		player.setPlayer1(player1);
@@ -62,6 +60,13 @@ public class UI {
 		System.out.println("Player 2, choose a Name: ");
 		String player2 = in.next();
 		player.setPlayer2(player2);
+	}
+
+	public void letsPlay(){
+		String move;
+		char playAgain = 'b';
+		
+		setPlayerNames();
 		
 		while(!gamePlay.full()){
 			displayBoard();
@@ -88,11 +93,11 @@ public class UI {
 					System.out.println("DRAW!");
 					playAgain = playAgain(playAgain);
 				}
-				/*else{
+				else{
 					gamePlay.changePlayer(gamePlay.getCurrentPlayer());
 					
 					
-				}*/
+				}
 
 				if(playAgain == 'n'){
 					System.out.println("Thanks for playing!");
