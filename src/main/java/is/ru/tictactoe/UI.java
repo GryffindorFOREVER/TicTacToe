@@ -61,6 +61,24 @@ public class UI {
 		String player2 = in.next();
 		player.setPlayer2(player2);
 	}
+	
+	public boolean checkValid(String move) {
+		if(move.length() > 1) {
+			return false;
+		}
+		try {
+			int intMove = Integer.parseInt(move);
+		} catch(Exception e)
+		{
+		   return false;
+		}
+		int intMove = Integer.parseInt(move);
+		if(intMove > 0 && intMove <= 9 && !(gamePlay.setMoved(intMove))) {
+			return true;
+		}
+
+		return false;
+	}
 
 	public void letsPlay(){
 		String move;
@@ -75,7 +93,7 @@ public class UI {
 			move = in.next();
 			System.out.println();
 			
-			if(!gamePlay.checkValid(move)){
+			if(!checkValid(move)){
 				System.out.println();
 				System.out.println("Invalid move! Try again");
 				System.out.println();

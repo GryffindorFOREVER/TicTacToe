@@ -1,28 +1,23 @@
 package is.ru.tictactoe;
 
 import java.util.Scanner;
-import com.google.gson.Gson;
 
 public class TicTacToe {
 	private Board board;
 	private Player player;
 	private String currentPlayer;
-	private char mark;
+	private String mark;
 	private static final int SIZE = 3;
 
 	public TicTacToe(Player daPlayer){
 		board = new Board();
-		mark = 'X';
+		mark = "X";
 		currentPlayer = null;
 		player = daPlayer;
 	}
 
 	public char[][] getBoardFromBoardClass(){
 		return board.getBoard();
-	}
-	
-	public String jsonYOLO() {
-		return new Gson().toJson("YOLO");
 	}
 	
 	public Board getBoard(){
@@ -35,40 +30,23 @@ public class TicTacToe {
 	public String getCurrentPlayer(){
 		return currentPlayer;
 	}
-	
-	public boolean checkValid(String move) {
-		if(move.length() > 1) {
-			return false;
-		}
-		try {
-			int intMove = Integer.parseInt(move);
-		} catch(Exception e)
-		{
-		   return false;
-		}
-		int intMove = Integer.parseInt(move);
-		if(intMove > 0 && intMove <= 9 && !(setMoved(intMove))) {
-			return true;
-		}
-		return false;
-	}
-	
+
 	public void changePlayer(String currentPlayer){
 
 		if(currentPlayer == player.getPlayer1()){
 			setCurrentPlayer(player.getPlayer2());
-			mark = 'O';
+			mark = "O";
 		}
 		else{
 			setCurrentPlayer(player.getPlayer1());
-			mark = 'X';
+			mark = "X";
 		}
 	}
 	
 	public boolean isWinner(int move){
 		int row = getRow(move);
 		int col = getColumn(move);
-		char mark = board.getBoardValue(row,col);
+		String mark = board.getBoardValue(row,col);
 		int count = 0;
 	
 		 //athugum larett
@@ -124,11 +102,11 @@ public class TicTacToe {
 		return ((number + 2) % 3);
 	}
 	
-	public char getMark(){
+	public String getMark(){
 		return mark;
 	}
 		
- 	public void setMove(int move, char mark){
+ 	public void setMove(int move, String mark){
 		int row = getRow(move);
 		int col = getColumn(move);
 		this.board.setBoardMove(row, col, mark);
@@ -137,7 +115,7 @@ public class TicTacToe {
 	public boolean setMoved(int move) {
 		int row = getRow(move);
 		int column = getColumn(move);
-		if(this.board.getBoardValue(row, column) == ' ') {
+		if(this.board.getBoardValue(row, column) == null) {
 			return false;
 		}
 		return true;
@@ -147,7 +125,7 @@ public class TicTacToe {
 
 	 	for(int i = 0; i < SIZE; i++){
 	 		for(int j = 0; j < SIZE; j++){
-	 			if(board.getBoardValue(i, j) == ' '){
+	 			if(board.getBoardValue(i, j) == null){
 	 				return false;
 	 			}
 	 		}
