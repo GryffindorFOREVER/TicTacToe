@@ -6,8 +6,8 @@ public class Player {
 	private String player2;
 	
 	Player() {
-		player1 = null;
-		player2 = null;
+		player1 = "Gryffindor";
+		player2 = "Slytherin";
 	}
 	
 	public void setPlayer1(String player){
