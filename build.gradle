@@ -11,6 +11,10 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    selenium
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
@@ -24,6 +28,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3'
     testCompile 'junit:junit:4.12'
     compile 'com.googlecode.json-simple:json-simple:1.1'
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
 //jar {
@@ -40,6 +47,11 @@ jacocoTestReport {
 	reports {
             xml.enabled true
     	}
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
 }
 
 
