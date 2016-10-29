@@ -46,13 +46,17 @@ public class TicTacToe {
 	public boolean isWinner(int move){
 		int row = getRow(move);
 		int col = getColumn(move);
-		String mark = board.getBoardValue(row,col);
+		char mark = board.getBoardValue(row,col).charAt(0);
 		int count = 0;
 	
 		 //athugum larett
 		 for(int i = 0; i < SIZE; i++){
-			 if(this.board.getBoardValue(i,col) == mark)
-				 count++;
+			char check;
+			if(this.board.getBoardValue(i, col) != null) {
+				check = this.board.getBoardValue(i, col).charAt(0);
+				if(check == mark)
+					count++;
+			}
 		 }
 		 if(count==3){
 			 	return true;
@@ -61,8 +65,12 @@ public class TicTacToe {
 		 
 		 //athugum lodrett
 		 for(int j = 0; j < SIZE; j++){
-			 if(this.board.getBoardValue(row,j) == mark)
-				 count++;
+			 char check;
+			 if(this.board.getBoardValue(row, j) != null) {
+				check = this.board.getBoardValue(row, j).charAt(0);
+				if(check == mark)
+					count++;
+			 }
 		 }
 		 if(count==3){
 			 	return true;
@@ -71,8 +79,12 @@ public class TicTacToe {
 		
 		 //athugum a ska fra vinstri
 		 for(int i = 0; i < SIZE; i++){
-			 if(this.board.getBoardValue(i,i) == mark)
-				 count++;
+			 char check;
+			 if(this.board.getBoardValue(i,i) != null) {
+				check = this.board.getBoardValue(i,i).charAt(0);
+				if(check == mark) 
+					count++;
+			 }
 		 }
 		 if(count==3){
 			 	return true;
@@ -80,8 +92,12 @@ public class TicTacToe {
 		 count = 0;
 		 //athugum a ska fra haegri
 		 for(int j = 0; j < SIZE; j++){
-			 if(this.board.getBoardValue(j,2-j) == mark)
-				 count++;
+			 char check;
+			 if(this.board.getBoardValue(j,2-j) != null) {
+				check = this.board.getBoardValue(j,2-j).charAt(0);
+				if(check == mark)
+					count++;
+			 }
 		 }
 		 if(count==3){
 		 	return true;
