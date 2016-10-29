@@ -11,43 +11,173 @@
 			<div class="wrapper">
 			    <div class="gameboard">
 
-			    	<form class="square" method="post" action="/turn" id="hehe">
+			    	<form class="square" method="post" action="/turn" id="form1">
 			        	<div id="c1"></div>
 			        </form>
 
-			        <form class="square" method="post" action="/turn" id="hehe2">
+			        <form class="square" method="post" action="/turn" id="form2">
 			       		 <div class="leftright" id="c2"></div>
 			        </form>
 
-			        <form class="square" method="post" action="/turn" id="hehe3">
+			        <form class="square" method="post" action="/turn" id="form3">
 				    	<div id="c3"></div>
 				    </form>
 
-				    <form class="square" method="post" action="/turn" id="hehe4">
+				    <form class="square" method="post" action="/turn" id="form4">
 				   		<div class="updown" id="c4"></div>
 				   	</form>
 
-				   	<form class="square" method="post" action="/turn" id="hehe5">
+				   	<form class="square" method="post" action="/turn" id="form5">
 			       		<div class="middle" id="c5"></div>
 			       	</form>
 
-			       	<form class="square" method="post" action="/turn" id="hehe6">
+			       	<form class="square" method="post" action="/turn" id="form6">
 			       		 <div class="updown" id="c6"></div>
 			       	</form>
 
-			       	<form class="square" method="post" action="/turn" id="hehe7">
+			       	<form class="square" method="post" action="/turn" id="form7">
 			       		 <div id="c7"></div>
 			       	</form>
 
-			       	<form class="square" method="post" action="/turn" id="hehe8">
+			       	<form class="square" method="post" action="/turn" id="form8">
 			        	<div class="leftright" id="c8"></div>	
 			        </form>
 
-			        <form class="square" method="post" action="/turn" id="hehe9">
+			        <form class="square" method="post" action="/turn" id="form9">
 			        	<div id="c9"></div>	
 			        </form>			    
 			    </div>
 			</div>
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+		<script>
+		
+		$(document).ready(function() {
+			var form = $('#form1');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c1").html(obj.mark);
+				}});
+			});
+		});
+		
+		$(document).ready(function() {
+			var form = $('#form2');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c2").html(obj.mark);
+				}});
+			});
+		});
+		
+		$(document).ready(function() {
+			var form = $('#form3');
+			//var obj = JSON.parse(result);
+			$(form).one("click",function( ) {
+				//$("#hehe").prop('disabled', true);
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c3").html(obj.mark);
+					//$("#volcano").append(result);
+					//return true;
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form4');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c4").html(obj.mark);
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form5');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c5").html(obj.mark);
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form6');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c6").html(obj.mark);
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form7');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c7").html(obj.mark);
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form8');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c8").html(obj.mark);
+					var id = "8";
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form9');
+			$(form).one("click",function( ) {
+				$.ajax({
+				type: form.attr('method'),
+				url: form.attr('action'),
+				data: null,
+				success: function( result ){
+					var obj = JSON.parse(result);
+					$("#c9").html(obj.mark);
+				}});
+			});
+		});
+        </script>
 
 	</body>
 </html>
