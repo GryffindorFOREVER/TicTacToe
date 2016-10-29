@@ -12,15 +12,22 @@ public class Board {
 			 }
 		 }
 	 }
-	 public void setBoardMove(int row, int col, char player){
-		 board[row][col] = player;
+	 public void setBoardMove(int row, int col, String player){
+		 char play = player.charAt(0);
+		 board[row][col] = play;
 	 }
 
 	 public char[][] getBoard(){
 	 	return board;
 	 }
-	 public char getBoardValue(int row, int col){
-	 	return board[row][col];
+	 
+	 public String getBoardValue(int row, int col){
+	 	char player = board[row][col];
+		if(board[row][col] == ' ') {
+			return null;
+		}
+		String play = Character.toString(player);
+		return play;
 	 }
 
 	 public static int getSize(){
