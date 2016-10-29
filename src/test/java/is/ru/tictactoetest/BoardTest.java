@@ -11,9 +11,16 @@ public class BoardTest {
 	}
 	
 	@Test
-	public void testGetBoardValue() {
+	public void testGetBoardValueX() {
 		Board b = new Board();
 		b.setBoardMove(2,2, "X");
 		assertEquals("X", b.getBoardValue(2,2));
+	}
+	
+	@Test
+	public void testGetBoardValueO() {
+		Board b = new Board();
+		b.setBoardMove(1,1, "O");
+		assertEquals("O", b.getBoardValue(1,1));
 	}
 }
