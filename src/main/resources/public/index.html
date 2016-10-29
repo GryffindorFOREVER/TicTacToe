@@ -5,101 +5,49 @@
 		<link rel="stylesheet" href="TicTacToeCSS.css" media="screen" />
 	</head>
 	<body>
-	
 		<audio autoplay loop>
 			<source src="../audio/hedwig.mp3" type="audio/mpeg">
 		</audio>
-		<div class="container">
-			<h1 class="header">Wizard TicTacToe</h1>
-			<div class="gridArea">
-				<table>
-					<tr id="row1">
-						<td class="square"></td>
-						<td class="square v"></td>
-						<td class="square"></td>
-					</tr>
-					<tr id="row2">
-						<td class="square h"></td>
-						<td class="square v h"></td>
-						<td class="square h"></td>
-					</tr>
-					<tr id="row3">
-						<td class="square"></td>
-						<td class="square v"></td>
-						<td class="square"></td>
-					</tr>
-				</table>
+			<div class="wrapper">
+			    <div class="gameboard">
+
+			    	<form class="square" method="post" action="/turn" id="hehe">
+			        	<div id="c1"></div>
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="hehe2">
+			       		 <div class="leftright" id="c2"></div>
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="hehe3">
+				    	<div id="c3"></div>
+				    </form>
+
+				    <form class="square" method="post" action="/turn" id="hehe4">
+				   		<div class="updown" id="c4"></div>
+				   	</form>
+
+				   	<form class="square" method="post" action="/turn" id="hehe5">
+			       		<div class="middle" id="c5"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="hehe6">
+			       		 <div class="updown" id="c6"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="hehe7">
+			       		 <div id="c7"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="hehe8">
+			        	<div class="leftright" id="c8"></div>	
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="hehe9">
+			        	<div id="c9"></div>	
+			        </form>			    
+			    </div>
 			</div>
-		
-			
-			<div class="houseSorting">
-				<h2>House sorting</h2>
-					<form action="/player1" method="post">
-						<fieldset>
-							<legend>Player 1:</legend>
-							<div>
-								<label for="player1">House:</label>
-								<select id="player1" name="houses">
-									<option value="gryffindor">Gryffindor</option>
-									<option value="slytherin">Slytherin</option>
-									<option value="hufflepuff">Hufflepuff</option>
-									<option value="ravenclaw">Ravenclaw</option>
-								</select>
-								<input type="submit" value="Sort"/>	
-							</div>
-						</fieldset>
-					</form>
-
-					<form action="/player2" method="post">
-						<fieldset>
-							<legend>Player 2:</legend>
-							<div>
-								<label for="player2">House:</label>
-								<select id="player2" name="houses">
-									<option value="gryffindor">Gryffindor</option>
-									<option value="slytherin">Slytherin</option>
-									<option value="hufflepuff">Hufflepuff</option>
-									<option value="ravenclaw">Ravenclaw</option>
-								</select>
-								<input type="submit" value="Sort"/>	
-							</div>
-						</fieldset>
-					</form>
-			</div>
-		</div>
-
-
-<!-- JAVA SCRIPT VIDMID-->
-<!--
-		<div>
-		<form method="post" action="/random" role="form">
-			<button type="submit">Random</button>	
-		</form>
-		<p id="results">
-
-		</p>
-		</div>
--->
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-		<script>
-        $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: null
-                }).done(function(joke) {
-                    $('#results').html(joke);
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...');
-                });
-                event.preventDefault();
-            });
-        });
-        </script>
 
 	</body>
 </html>
