@@ -107,10 +107,10 @@ public class UI {
 					System.out.println();
 					playAgain = playAgain(playAgain);
 				}
-				else if(!gamePlay.isWinner(intMove) && gamePlay.full()){
+				/*else if(!gamePlay.isWinner(intMove) && gamePlay.full()){
 					System.out.println("DRAW!");
 					playAgain = playAgain(playAgain);
-				}
+				}*/
 				else{
 					gamePlay.changePlayer(gamePlay.getCurrentPlayer());
 					

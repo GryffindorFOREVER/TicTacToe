@@ -8,13 +8,13 @@ public class TicTacToeTest {
 	public static void main(String args[]) {
     	org.junit.runner.JUnitCore.main("is.ru.tictactoetest.TicTacToeTest");
 	}
-/*
+
    @Test
 	public void XwinsDiagonalFromUpperLeft()
 	{
 	   Player player = new Player();
 	   	TicTacToe t = new TicTacToe(player);
-		t.setMove(1,"X");
+		t.setMove(1, "X");
 		t.setMove(2, "O");
 		t.setMove(5, "X");
 		t.setMove(3, "O");
@@ -95,7 +95,7 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(7,"X");
+		t.setMove(7, "X");
 		t.setMove(1, "O");
 		t.setMove(8, "X");
 		t.setMove(5, "O");
@@ -109,14 +109,19 @@ public class TicTacToeTest {
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
 		t.setMove(4, "X");
+		t.changePlayer(player.getPlayer2());
 		t.setMove(1, "O");
+		t.changePlayer(player.getPlayer1());
 		t.setMove(9, "X");
+		t.changePlayer(player.getPlayer2());
 		t.setMove(2, "O");
+		t.changePlayer(player.getPlayer1());
 		t.setMove(8, "X");
+		t.changePlayer(player.getPlayer2());
 		t.setMove(3, "O");
 	    assertTrue(t.isWinner(3));
 	}
-*/	
+	
 
 	@Test
 	public void testFull(){
