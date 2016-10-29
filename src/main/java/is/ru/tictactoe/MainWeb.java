@@ -55,7 +55,7 @@ public class MainWeb implements SparkApplication{
 				return obj;
 			}
 			
-			
+			obj.put("isOver", endMessage);
 			
 			
 			tic.changePlayer(tic.getCurrentPlayer());
