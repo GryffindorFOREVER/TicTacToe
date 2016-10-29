@@ -48,6 +48,7 @@
 			        </form>			    
 			    </div>
 			</div>
+			<h1 id="gameOver"></h1>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -57,12 +58,13 @@
 			var form = $('#form1');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c1").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=1',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c1").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -71,12 +73,13 @@
 			var form = $('#form2');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c2").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=2',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c2").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -87,14 +90,13 @@
 			$(form).one("click",function( ) {
 				//$("#hehe").prop('disabled', true);
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c3").html(obj.mark);
-					//$("#volcano").append(result);
-					//return true;
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=3',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c3").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -102,12 +104,13 @@
 			var form = $('#form4');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c4").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=4',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c4").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -115,12 +118,13 @@
 			var form = $('#form5');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c5").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=5',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c5").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -128,12 +132,13 @@
 			var form = $('#form6');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c6").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=6',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c6").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -141,12 +146,13 @@
 			var form = $('#form7');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c7").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=7',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c7").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});
@@ -154,13 +160,14 @@
 			var form = $('#form8');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c8").html(obj.mark);
-					var id = "8";
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=8',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c8").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
+						var id = "8";
 				}});
 			});
 		});
@@ -168,12 +175,13 @@
 			var form = $('#form9');
 			$(form).one("click",function( ) {
 				$.ajax({
-				type: form.attr('method'),
-				url: form.attr('action'),
-				data: null,
-				success: function( result ){
-					var obj = JSON.parse(result);
-					$("#c9").html(obj.mark);
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=9',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						$("#c9").html(obj.mark);
+						$("#gameOver").html(obj.isOver);
 				}});
 			});
 		});

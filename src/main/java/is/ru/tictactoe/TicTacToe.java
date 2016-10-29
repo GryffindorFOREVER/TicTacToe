@@ -148,4 +148,10 @@ public class TicTacToe {
 	 	}
 	 	return true;
 	 }
+	 
+	 public void resetBoard(){
+		 board = new Board();
+		 setCurrentPlayer(player.getPlayer1());
+		 this.mark = "X";
+	 }
 }

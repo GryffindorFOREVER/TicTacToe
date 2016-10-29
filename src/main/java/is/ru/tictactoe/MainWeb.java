@@ -28,10 +28,40 @@ public class MainWeb implements SparkApplication{
 		tic.setCurrentPlayer(player.getPlayer1());
 		post("/turn", (req, res) -> {
 			JSONObject obj = new JSONObject();
+			String sTileNumber = req.queryParams("tileNumber");
+			int iTileNumber = (Integer.parseInt(sTileNumber));
+			tic.setMove(iTileNumber, tic.getMark());
 			obj.put("mark", tic.getMark());
+			
+			
+			//Check if there is a winner
+			String endMessage = "";
+			boolean isNotWinner = true;
+			if(tic.isWinner(iTileNumber)){
+				endMessage = tic.getMark();
+				endMessage += " is winner";
+				tic.resetBoard();
+				isNotWinner = false;
+				obj.put("isOver", endMessage);
+				return obj;
+			}
+			
+			//Check if board is full and display message
+//			String full = "";
+			if(tic.full() && isNotWinner){
+				endMessage = "Draw";
+				tic.resetBoard();
+				obj.put("isOver", endMessage);
+				return obj;
+			}
+			
+			
+			
+			
 			tic.changePlayer(tic.getCurrentPlayer());
 			obj.put("currentPlayer", tic.getCurrentPlayer());
-			obj.put("isFull", tic.full());
+			
+			//obj.put("isFull", tic.full());
 			//tic.setMove(numer af reitnum)
 			//obj.put("",tic.isWinner());
 			return obj;
