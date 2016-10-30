@@ -71,6 +71,7 @@ public class MainWeb implements SparkApplication{
 			//obj.put("",tic.isWinner());
 			return obj;
 		});
+		//Clears the board
 		post("/clear", (req, res) -> {
 			JSONObject e = new JSONObject();
 			e.put("empty","");
