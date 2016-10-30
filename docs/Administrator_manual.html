@@ -12,19 +12,34 @@
   <div class="container">
     <div id="content">
       <h1 id="administrator-report">Administrator report</h1>
+<p>This manual will give the needed information on how to deploy, run and maintain the code in this project. It will also provide the information needed on how to install and run the program.</p>
 <h2 id="wizard-tictactoe">Wizard TicTacToe</h2>
+<h3 id="deploy-run-and-maintain">Deploy, run and maintain</h3>
+<p>When deploying and running the project on a fresh computer it is needed to follow certain steps. </p>
+<ol>
+<li>A github account is needed.</li>
+<li>Fork and then clone the project to the computer. It can be done <a href="https://github.com/GryffindorFOREVER/TicTacToe">here</a>. </li>
+<li>Download the JRE(Java Runtime environment)<ul>
+<li>It can be downloaded <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">here</a>.</li>
+</ul>
+</li>
+<li>To deploy and run the project locally the following command is needed:<ul>
+<li><em>./bin/deploy</em></li>
+<li>Then you should be able to run the program on this link <a href="localhost:4567">localhost:4567</a>.</li>
+</ul>
+</li>
+<li>The bin folder is useful if it is needed to debug a code that is new. To run scripts in the bin folder it is needed to write <em>/bin/</em> and then the name of the script wanted to be executed. The bin folder holds scripts that are used when running, compiling and deploying the project in separate steps.</li>
+<li>Traves CI takes care of pushing new versions on to the Heroku server. Pushing to the github project automatically starts the Travis CI process.</li>
+</ol>
 <h3 id="how-to-play-the-game">How to play the game</h3>
 <ol>
-<li>Visit the games webpage <a href="http://tictactoe-gryffindor.herokuapp.com">http://tictactoe-gryffindor.herokuapp.com/</a></li>
-</ol>
-<p><img alt="game_begin" src="http://i66.tinypic.com/nmawk6.png" /></p>
-<h3 id="how-to-win-the-game">How to win the game</h3>
-<ol>
+<li>Visit the game's webpage <a href="http://tictactoe-gryffindor.herokuapp.com">http://tictactoe-gryffindor.herokuapp.com/</a>.</li>
 <li>The game is a competition between two players, Gryffindor and Slytherin.</li>
 <li>Choose a cell in the board to click, when you click it your crest will appear in that cell.</li>
 <li>Gryffindor always makes the first move and then the players take turns making a move. The page will inform the players who is supposed to make the next move.</li>
 <li>To win the game you need to be the first player to get three identical crests in a row, either vertically, horizontally or diagonally. </li>
 <li>When the game is over you can start a new game by clicking the <em>New game</em> button.</li>
+<li><img alt="game_begin" src="http://i66.tinypic.com/nmawk6.png" /> </li>
 </ol>
 <p><img alt="slytherin_winner" src="http://i64.tinypic.com/161l2iu.png" /></p>
     </div>
