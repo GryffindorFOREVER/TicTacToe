@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://markable.in/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://markable.in//static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://markable.in/static/editor/css/view_file.css">
+  <link rel="stylesheet" type="text/css" href="https://markable.in/static/css/code.css">
+</head>
+<body>
+  <div class="container">
+    <div id="content">
+      <h1 id="development-manual">Development manual</h1>
+<p>This is a development manual for a game called Tic Tac Toe made by the group Gryffindor in the course Software Engineering in the University of Reykjavík. 
+The source control client in use is github. </p>
+<p>Everyone should be able to open their internet browser and use the url: 
+<a href="http://tictactoe-gryffindor.herokuapp.com">http://tictactoe-gryffindor.herokuapp.com</a></p>
+<h2 id="access-to-source-control">Access to source control</h2>
+<p>To get access to source control you have to contact one of the administrators who can give you access to the source code which is stored on github.</p>
+<h2 id="build-environment">Build environment</h2>
+<h3 id="to-get-the-project-to-build-these-things-are-needed">To get the project to build these things are needed:</h3>
+<ol>
+<li>The JRE(Java Runtime environment) needs to be installed on your computer. <ul>
+<li>If you don't already have it you can download it here: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</a></li>
+</ul>
+</li>
+<li>A github account is needed. If you don't have one, please go ahead an create one.</li>
+<li>Fork the project to your computer at <a href="https://github.com/GryffindorFOREVER/TicTacToe">https://github.com/GryffindorFOREVER/TicTacToe</a></li>
+<li>
+<p>Clone the project to your machine.</p>
+</li>
+<li>
+<p>Open up the build.gradle file with the editor of your choosing and change the name to 'is.ru.tictactoe.MainWeb' if you want to deploy the web version, for the console version it should read 'is.ru.tictactoe.Main'.</p>
+</li>
+</ol>
+<p><strong>If you would like to run the project locally and in separate steps, do the following:</strong></p>
+<ol>
+<li>
+<p>Clean the project using the following command:</p>
+<ul>
+<li><em>./bin/clean</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Build the project using the following command:</p>
+<ul>
+<li><em>./bin/build</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Compile the project using the following command:</p>
+<ul>
+<li><em>./bin/compile</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Compile and run unit tests using the following command:</p>
+<ul>
+<li><em>./bin/unit_test</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Compile and run JaCoCo (Java Code Coverage Library) using the following command:</p>
+<ul>
+<li><em>./bin/jacoco_test</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Compile and run Selenium web driver using the following commands (only applies to web version):</p>
+<p>First open two terminals. </p>
+<p>In the first one you use the following command:
+<em> </em>./bin/check_run*</p>
+<p>When a connection to the server has been established us should see a message that ends with the following line: <em>INFO org.eclipse.jetty.server.Server - Started...</em></p>
+<p>Then use the following command in the other terminal:
+<em> </em>./bin/selenium_test*</p>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Run all tests (unit and JaCoCo tests) using the following command:</p>
+<ul>
+<li><em>./bin/all_tests</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+</li>
+<li>
+<p>Now finally execute the program using the following command:</p>
+<ul>
+<li><em>./bin/deploy</em></li>
+</ul>
+<p>The message should read 'Build Successful'. </p>
+<p><strong>Console:</strong> The game should be executed in your terminal prompt window.</p>
+<p><strong>Web:</strong> You should be able to open your internet browser and use the url: <a href="localhost:4567">localhost:4567</a> for executing the game.</p>
+</li>
+</ol>
+<p><strong>If you want to go straight ahead and execute the program without using separate steps do the following:</strong></p>
+<ol>
+<li>
+<p>To build, compile and run the project all at once use the following commands:</p>
+<ul>
+<li><em>./bin/deploy</em></li>
+</ul>
+<p>The message should read 'Build Successful'.</p>
+<p><strong>Console:</strong> The game should be executed in your terminal prompt window.</p>
+<p><strong>Web:</strong> You should be able to open your internet browser and use the url <a href="localhost:4567">localhost:4567</a> for executing the game.</p>
+</li>
+</ol>
+<h3 id="tests-overview">Tests overview</h3>
+<ol>
+<li>Travis takes care of the unit tests automatically and pushes the code on to a heroku server which deploys the game. Here is the link to the project on Travis <a href="https://travis-ci.org/GryffindorFOREVER/TicTacToe/builds">https://travis-ci.org/GryffindorFOREVER/TicTacToe/builds</a></li>
+<li>Code Coverage can be accessed on the site <a href="https://codecov.io/gh/GryffindorFOREVER/TicTacToe">https://codecov.io/gh/GryffindorFOREVER/TicTacToe</a></li>
+</ol>
+    </div>
+  </div>
+</body>
+</html>
