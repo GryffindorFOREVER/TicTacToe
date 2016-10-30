@@ -5,11 +5,19 @@ body{
 	background: rgb(38, 38, 38);
 }
 
+@font-face {
+    font-family: hpMadness;
+    src: url(/font/HARRYP__.TTF);
+}
+
 h1{
 	background: rgb(38, 38, 38);
 	margin-top: 5%;
 	margin-bottom: 5%;
-	color: white;
+	color: rgb(235, 163, 12);
+	font-family: hpMadness;
+	font-size: 70px;
+	text-align: center;
 }
 
 img{
