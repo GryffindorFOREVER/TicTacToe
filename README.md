@@ -1,5 +1,7 @@
 # TicTacToe
 
+[Wizard TicTacToe](http://tictactoe-gryffindor.herokuapp.com/)
+
 [![codecov](https://codecov.io/gh/GryffindorFOREVER/TicTacToe/branch/master/graph/badge.svg)](https://codecov.io/gh/GryffindorFOREVER/TicTacToe)
 
 [![Travis](https://img.shields.io/travis/GryffindorFOREVER/TicTacToe.svg)]()
@@ -13,7 +15,7 @@ Wizarding tic tac toe is a two player game where each wizard takes turn in placi
 * [Administrator manual](docs/Administrator_manual.md)
 * [Design report](docs/DesignReport.md)
 
-###Group members:
+#### Group members:
 * Auður Björk Aradóttir
 * Berglind Gunnarsdóttir
 * Brynjar Bragason
