@@ -1,12 +1,18 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'jacoco'
 
-mainClassName = "is.ru.tictactoe.MainWeb" //this depends on the name of our class so it might change
+
+mainClassName = 'is.ru.tictactoe.MainWeb' //this depends on the name of our class so it might change
 
 
 // In this section you declare where to find the dependencies of your project
 repositories {
     jcenter()
+}
+
+sourceSets {
+    selenium
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -21,6 +27,10 @@ dependencies {
     compile 'com.sparkjava:spark-core:2.3'
     compile 'com.google.code.gson:gson:2.3'
     testCompile 'junit:junit:4.12'
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
 //jar {
@@ -32,4 +42,18 @@ dependencies {
 task stage{
 	dependsOn installDist
 }
+
+jacocoTestReport {
+	reports {
+            xml.enabled true
+    	}
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+}
+
+
+check.dependsOn jacocoTestReport
 

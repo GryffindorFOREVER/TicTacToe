@@ -8,96 +8,220 @@
 		<audio autoplay loop>
 			<source src="../audio/hedwig.mp3" type="audio/mpeg">
 		</audio>
-		<div class="container">
-			<h1 class="header">Wizard TicTacToe</h1>
-			<div class="gridArea">
-				<table>
-					<tr id="row1">
-						<td class="square"></td>
-						<td class="square v"></td>
-						<td class="square"></td>
-					</tr>
-					<tr id="row2">
-						<td class="square h"></td>
-						<td class="square v h"></td>
-						<td class="square h"></td>
-					</tr>
-					<tr id="row3">
-						<td class="square"></td>
-						<td class="square v"></td>
-						<td class="square"></td>
-					</tr>
-				</table>
+			<div class="wrapper">
+			    <div class="gameboard">
+
+			    	<form class="square" method="post" action="/turn" id="form1">
+			        	<div id="c1"></div>
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="form2">
+			       		 <div class="leftright" id="c2"></div>
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="form3">
+				    	<div id="c3"></div>
+				    </form>
+
+				    <form class="square" method="post" action="/turn" id="form4">
+				   		<div class="updown" id="c4"></div>
+				   	</form>
+
+				   	<form class="square" method="post" action="/turn" id="form5">
+			       		<div class="middle" id="c5"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="form6">
+			       		 <div class="updown" id="c6"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="form7">
+			       		 <div id="c7"></div>
+			       	</form>
+
+			       	<form class="square" method="post" action="/turn" id="form8">
+			        	<div class="leftright" id="c8"></div>	
+			        </form>
+
+			        <form class="square" method="post" action="/turn" id="form9">
+			        	<div id="c9"></div>	
+			        </form>			    
+			    </div>
 			</div>
-		
+			<h1 id="gameOver"></h1>
 			
-			<div class="houseSorting">
-				<h2>House sorting</h2>
-					<form action="/player1" method="post">
-						<fieldset>
-							<legend>Player 1:</legend>
-							<div>
-								<label for="player1">House:</label>
-								<select id="player1" name="houses">
-									<option value="gryffindor">Gryffindor</option>
-									<option value="slytherin">Slytherin</option>
-									<option value="hufflepuff">Hufflepuff</option>
-									<option value="ravenclaw">Ravenclaw</option>
-								</select>
-								<input type="submit" value="Sort"/>	
-							</div>
-						</fieldset>
-					</form>
-
-					<form action="/player2" method="post">
-						<fieldset>
-							<legend>Player 2:</legend>
-							<div>
-								<label for="player2">House:</label>
-								<select id="player2" name="houses">
-									<option value="gryffindor">Gryffindor</option>
-									<option value="slytherin">Slytherin</option>
-									<option value="hufflepuff">Hufflepuff</option>
-									<option value="ravenclaw">Ravenclaw</option>
-								</select>
-								<input type="submit" value="Sort"/>	
-							</div>
-						</fieldset>
-					</form>
-			</div>
-		</div>
-
-
-<!-- JAVA SCRIPT VIDMID-->
-<!--
-		<div>
-		<form method="post" action="/random" role="form">
-			<button type="submit">Random</button>	
-		</form>
-		<p id="results">
-
-		</p>
-		</div>
--->
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 		<script>
-        $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: null
-                }).done(function(joke) {
-                    $('#results').html(joke);
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...');
-                });
-                event.preventDefault();
-            });
-        });
+		
+		$(document).ready(function() {
+			var form = $('#form1');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=1',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c1").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		
+		$(document).ready(function() {
+			var form = $('#form2');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=2',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c2").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+						
+				}});
+			});
+		});
+		
+		$(document).ready(function() {
+			var form = $('#form3');
+			//var obj = JSON.parse(result);
+			$(form).one("click",function( ) {
+				//$("#hehe").prop('disabled', true);
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=3',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c3").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form4');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=4',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c4").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form5');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=5',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c5").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form6');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=6',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c6").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form7');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=7',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c7").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form8');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=8',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c8").html(img);
+						$("#gameOver").html(obj.isOver);
+						var id = "8";
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
+		$(document).ready(function() {
+			var form = $('#form9');
+			$(form).one("click",function( ) {
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: 'tileNumber=9',
+					success: function( result ){
+						var obj = JSON.parse(result);
+						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
+						$("#c9").html(img);
+						$("#gameOver").html(obj.isOver);
+						if(obj.isOver != ""){
+							$(".square").css("pointer-events", "none");
+						}
+				}});
+			});
+		});
         </script>
 
 	</body>

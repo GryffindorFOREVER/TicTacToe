@@ -14,11 +14,11 @@ public class TicTacToeTest {
 	{
 	   Player player = new Player();
 	   	TicTacToe t = new TicTacToe(player);
-		t.setMove(1,'X');
-		t.setMove(2, 'O');
-		t.setMove(5, 'X');
-		t.setMove(3, 'O');
-		t.setMove(9, 'X');
+		t.setMove(1, "X");
+		t.setMove(2, "O");
+		t.setMove(5, "X");
+		t.setMove(3, "O");
+		t.setMove(9, "X");
 	    assertTrue(t.isWinner(9));
 	}
 
@@ -27,12 +27,12 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(3,'X');
-		t.setMove(1, 'O');
-		t.setMove(2, 'X');
-		t.setMove(5, 'O');
-		t.setMove(8, 'X');
-		t.setMove(9, 'O');
+		t.setMove(3, "X");
+		t.setMove(1, "O");
+		t.setMove(2, "X");
+		t.setMove(5, "O");
+		t.setMove(8, "X");
+		t.setMove(9, "O");
 	    assertTrue(t.isWinner(9));
 	}
 	
@@ -41,11 +41,11 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(3,'X');
-		t.setMove(1, 'O');
-		t.setMove(5, 'X');
-		t.setMove(2, 'O');
-		t.setMove(7, 'X');
+		t.setMove(3,"X");
+		t.setMove(1, "O");
+		t.setMove(5, "X");
+		t.setMove(2, "O");
+		t.setMove(7, "X");
 	    assertTrue(t.isWinner(3));
 	}
 	
@@ -54,12 +54,12 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(1,'X');
-		t.setMove(3, 'O');
-		t.setMove(2, 'X');
-		t.setMove(5, 'O');
-		t.setMove(8, 'X');
-		t.setMove(7, 'O');
+		t.setMove(1,"X");
+		t.setMove(3, "O");
+		t.setMove(2, "X");
+		t.setMove(5, "O");
+		t.setMove(8, "X");
+		t.setMove(7, "O");
 	    assertTrue(t.isWinner(3));
 	}
 
@@ -68,11 +68,11 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(3,'X');
-		t.setMove(1, 'O');
-		t.setMove(6, 'X');
-		t.setMove(5, 'O');
-		t.setMove(9, 'X');
+		t.setMove(3, "X");
+		t.setMove(1, "O");
+		t.setMove(6, "X");
+		t.setMove(5, "O");
+		t.setMove(9, "X");
 	    assertTrue(t.isWinner(9));
 	}
 	
@@ -81,12 +81,12 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(1,'X');
-		t.setMove(2, 'O');
-		t.setMove(3, 'X');
-		t.setMove(5, 'O');
-		t.setMove(7, 'X');
-		t.setMove(8, 'O');
+		t.setMove(1, "X");
+		t.setMove(2, "O");
+		t.setMove(3, "X");
+		t.setMove(5, "O");
+		t.setMove(7, "X");
+		t.setMove(8, "O");
 	    assertTrue(t.isWinner(5));
 	}
 	
@@ -95,11 +95,11 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(7,'X');
-		t.setMove(1, 'O');
-		t.setMove(8, 'X');
-		t.setMove(5, 'O');
-		t.setMove(9, 'X');
+		t.setMove(7, "X");
+		t.setMove(1, "O");
+		t.setMove(8, "X");
+		t.setMove(5, "O");
+		t.setMove(9, "X");
 	    assertTrue(t.isWinner(9));
 	}
 
@@ -108,12 +108,17 @@ public class TicTacToeTest {
 	{
 		Player player = new Player();
 	    TicTacToe t = new TicTacToe(player);
-		t.setMove(4,'X');
-		t.setMove(1, 'O');
-		t.setMove(9, 'X');
-		t.setMove(2, 'O');
-		t.setMove(8, 'X');
-		t.setMove(3, 'O');
+		t.setMove(4, "X");
+		t.changePlayer(player.getPlayer2());
+		t.setMove(1, "O");
+		t.changePlayer(player.getPlayer1());
+		t.setMove(9, "X");
+		t.changePlayer(player.getPlayer2());
+		t.setMove(2, "O");
+		t.changePlayer(player.getPlayer1());
+		t.setMove(8, "X");
+		t.changePlayer(player.getPlayer2());
+		t.setMove(3, "O");
 	    assertTrue(t.isWinner(3));
 	}
 	
@@ -141,34 +146,6 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void checkIfValid(){
-		Player player = new Player();
-		TicTacToe b = new TicTacToe(player);
-		assertTrue(b.checkValid("3"));
-	}
-	
-	@Test
-	public void checkIfInvalid(){
-		Player player = new Player();
-		TicTacToe b = new TicTacToe(player);
-		assertFalse(b.checkValid("12"));
-	}
-	
-	@Test
-	public void checkIfChar(){
-		Player player = new Player();
-		TicTacToe b = new TicTacToe(player);
-		assertFalse(b.checkValid("b"));
-	}
-	
-	@Test
-	public void checkIfCharSequence(){
-		Player player = new Player();
-		TicTacToe b = new TicTacToe(player);
-		assertFalse(b.checkValid("YOLO"));
-	}
-	
-	@Test
 	public void testGetRow() {
 		Player player = new Player();
 		TicTacToe t = new TicTacToe(player);
@@ -186,7 +163,7 @@ public class TicTacToeTest {
 	public void testSetMove() {
 		Player player = new Player();
 		TicTacToe t = new TicTacToe(player);
-    	t.setMove(8 , 'O');
+    	t.setMove(8 , "O");
 		assertTrue(t.setMoved(8));
 	}
 	@Test

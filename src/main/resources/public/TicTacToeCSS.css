@@ -1,8 +1,7 @@
 body{
-	/*padding: 0px 10px 130px 10px; /*Top - Right - Bottom - Left*/
 	background-color: #FFF;
 	font-family: calibri, arial, sans-serif;
-	font-size: 16px;
+	font-size: 22px;
 	background: rgb(38, 38, 38);
 }
 
@@ -13,8 +12,9 @@ h1{
 	color: white;
 }
 
-form{
-	padding: 5% 0%;
+img{
+	height: 90px;
+    width: 100%;
 }
 
 .container{
@@ -29,6 +29,41 @@ form{
 	color: white;
 }
 
+.wrapper {
+    width: 330px;
+    margin:0 auto;
+    /*float: right;*/
+}
+.gameboard {
+    width: 330px;
+    height:310px;
+    z-index: 1;
+}
+.gameboard div {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.middle {
+    border: 1px solid;
+}
+.button {
+    background-color:white;
+    width: 160px;
+    margin:0 auto;
+}
+.updown {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.leftright {
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+
+
+/*
 .gridArea{
 	float: right;
 	width: 70%;
@@ -49,7 +84,7 @@ form{
 .h{
     border-top:1px solid #000;
     border-bottom:1px solid #000;
-}
+}*/
 
 
 
