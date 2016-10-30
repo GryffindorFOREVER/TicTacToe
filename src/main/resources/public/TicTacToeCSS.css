@@ -69,34 +69,17 @@ img{
     border-right: 1px solid #9e9898;
 }
 
+#BtnStyleID{
+    color: rgb(235, 163, 12);
+    background: rgb(38, 38, 38);
+    Font-family: hpMadness;
+    Font-size: 30px;
+    Border-color:  #9e9898;
+    Border-radius: 2px;
 
-/*
-.gridArea{
-	float: right;
-	width: 70%;
-	color: white;
 }
 
-.square{
-    width:100px;
-    height:100px;
-	background: white;
+#btnID{
+     text-align: center;
+     padding-right: 25px;
 }
-
-.v{
-    border-left:1px solid #000;
-    border-right:1px solid #000;
-}
-
-.h{
-    border-top:1px solid #000;
-    border-bottom:1px solid #000;
-}*/
-
-
-
-
-
-
-
-
