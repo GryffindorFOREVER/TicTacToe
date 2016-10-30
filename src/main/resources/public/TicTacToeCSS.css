@@ -1,3 +1,9 @@
+*{
+	cursor: url(../images/elder.png), auto;
+}
+*:active{
+	cursor: url(../images/elderwand.png), auto;
+}
 body{
 	background-color: #FFF;
 	font-family: calibri, arial, sans-serif;
