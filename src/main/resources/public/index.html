@@ -49,12 +49,15 @@
 			        </form>			    
 			    </div>
 			</div>
-			<h1 id="gameOver"></h1>
+			
+			<h1 id="gameOver">Gryffindor make a move</h1>
 			<form id="btnID" method="post" action="/clear">
 				<button id="BtnStyleID" type="reset" form="btnID">New Game</button>
 			</form>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>
+		
+		
 
 
 		$(document).ready(function(){
@@ -84,6 +87,7 @@
 						var img = $('<img alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c1").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -103,6 +107,7 @@
 						var img = $('<img alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c2").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -125,6 +130,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c3").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -143,6 +149,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c4").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -161,6 +168,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c5").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -179,6 +187,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c6").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -197,6 +206,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c7").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -215,7 +225,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c8").html(img);
 						$("#gameOver").html(obj.isOver);
-						var id = "8";
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
@@ -234,6 +244,7 @@
 						var img = $('<img class="image" alt="Crest"/>').attr({"src" : obj.mark});
 						$("#c9").html(img);
 						$("#gameOver").html(obj.isOver);
+						$("#gameOver").html(obj.currentPlayer);
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
