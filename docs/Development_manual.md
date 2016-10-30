@@ -1,6 +1,6 @@
 #Development manual
 
-This is a development manual for a game called Tic Tac Toe made by the group Gryffindor in the course Software Engineering in the University of Reykjavík. 
+This is a development manual for a game called Tic Tac Toe made by the group Gryffindor in the course Software Engineering at the University of Reykjavík. 
 The source control client in use is github. 
 
 Everyone should be able to open their internet browser and use the url: 
