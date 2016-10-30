@@ -44,7 +44,7 @@ public class MainWeb implements SparkApplication{
 			boolean isNotWinner = true;
 			if(tic.isWinner(iTileNumber)){
 				endMessage = tic.getCurrentPlayer();
-				endMessage += " is winner";
+				endMessage += " is the winner";
 				tic.resetBoard();
 				isNotWinner = false;
 				obj.put("isOver", endMessage);
@@ -62,15 +62,18 @@ public class MainWeb implements SparkApplication{
 			
 			obj.put("isOver", endMessage);
 			
-			
+			//obj.put("nextMove", tic.getCurrentPlayer());
 			tic.changePlayer(tic.getCurrentPlayer());
-			obj.put("currentPlayer", tic.getCurrentPlayer());
+			
+			String nextMover = tic.getCurrentPlayer() + " make a move";
+			obj.put("currentPlayer", nextMover);
 			
 			//obj.put("isFull", tic.full());
 			//tic.setMove(numer af reitnum)
 			//obj.put("",tic.isWinner());
 			return obj;
 		});
+		//Clears the board
 		post("/clear", (req, res) -> {
 			JSONObject e = new JSONObject();
 			e.put("empty","");
