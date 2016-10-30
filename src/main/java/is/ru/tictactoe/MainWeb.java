@@ -39,12 +39,11 @@ public class MainWeb implements SparkApplication{
 			}
 			obj.put("mark", mark);
 			
-			
 			//Check if there is a winner
 			String endMessage = "";
 			boolean isNotWinner = true;
 			if(tic.isWinner(iTileNumber)){
-				endMessage = tic.getMark();
+				endMessage = tic.getCurrentPlayer();
 				endMessage += " is winner";
 				tic.resetBoard();
 				isNotWinner = false;
@@ -72,6 +71,11 @@ public class MainWeb implements SparkApplication{
 			//obj.put("",tic.isWinner());
 			return obj;
 		});
-
+		post("/clear", (req, res) -> {
+			JSONObject e = new JSONObject();
+			e.put("empty","");
+			tic.resetBoard();
+			return e;
+		});
 	}
 }
