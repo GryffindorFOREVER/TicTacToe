@@ -31,7 +31,13 @@ public class MainWeb implements SparkApplication{
 			String sTileNumber = req.queryParams("tileNumber");
 			int iTileNumber = (Integer.parseInt(sTileNumber));
 			tic.setMove(iTileNumber, tic.getMark());
-			obj.put("mark", tic.getMark());
+			String mark = tic.getMark();
+			if(mark == "X") {
+				mark = "/images/Gryffindor_crest.jpg";
+			} else {
+				mark = "/images/slytherin_crest.jpg";
+			}
+			obj.put("mark", mark);
 			
 			
 			//Check if there is a winner
