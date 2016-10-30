@@ -2,6 +2,7 @@
 
 ##**Class Diagram**
 <return>
+
 Before we started programming we made a class diagram to get a better overview of the program. When we started working on the program we noticed that the class diagram that we made wasn’t good enough. Therefore we had to make a lot of changes to make the program work perfectly. Below you can see the class diagram that we made before we started programming.  Also, you can see the class diagram for the console application and the web application, that we made after programming.
 
 ###**Class Diagram Before Programming**
