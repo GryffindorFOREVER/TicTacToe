@@ -50,11 +50,27 @@
 			    </div>
 			</div>
 			<h1 id="gameOver"></h1>
-			
+			<form id="btnID" method="post" action="/clear">
+				<button id="BtnStyleID" type="reset" form="btnID">New Game</button>
+			</form>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 		<script>
-		
+
+
+		$(document).ready(function(){
+			var form = $('#btnID');
+			$(form).click(function(){
+				console.log("button clicked");
+				$.ajax({
+					url: form.attr('action'),
+					type: form.attr('method'),
+					success: function(result){
+						location.reload();
+					}
+				});
+			});
+		});
+
 		$(document).ready(function() {
 			var form = $('#form1');
 			$(form).one("click",function( ) {
@@ -89,8 +105,8 @@
 						if(obj.isOver != ""){
 							$(".square").css("pointer-events", "none");
 						}
-						
-				}});
+					}
+				});
 			});
 		});
 		
