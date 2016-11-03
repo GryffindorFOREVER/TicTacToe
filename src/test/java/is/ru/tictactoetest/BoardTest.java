@@ -9,6 +9,8 @@ public class BoardTest {
 	public void testGetSize(){
 		assertEquals(3, Board.getSize());
 	}
+	//thetta er comment
+	//og annad
 	
 	@Test
 	public void testGetBoardValueX() {
